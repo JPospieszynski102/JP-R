@@ -1,0 +1,1424 @@
+setwd("J:/360/projekt")        #nie byłem pewien czy cały czas działa na odpowiednim miejscu
+library("tidyverse")           #install.packages("tidyverse")
+library("readxl")              #install.packages("readxl")
+library("plotly")              #install.packages("plotly") 
+essa=readxl::read_xlsx("dane.xlsx",sheet=1)
+koszyk.dolno<-essa[essa$Nazwa == "DOLNOŚLĄSKIE", ]
+koszyk.kujawsko<-essa[essa$Nazwa == "KUJAWSKO-POMORSKIE", ]
+koszyk.lubel<-essa[essa$Nazwa == "LUBELSKIE", ]
+koszyk.lubel1<-essa[essa$Nazwa == "LUBUSKIE", ]
+koszyk.lubel11<-essa[essa$Nazwa == "ŁÓDZKIE", ]
+koszyk.lubel2<-essa[essa$Nazwa == "MAŁOPOLSKIE", ]
+koszyk.lubel22<-essa[essa$Nazwa == "MAZOWIECKIE", ]
+koszyk.lubel3<-essa[essa$Nazwa == "OPOLSKIE", ]
+koszyk.lubel33<-essa[essa$Nazwa == "PODLASKIE", ]
+koszyk.lubel4<-essa[essa$Nazwa == "POMORSKIE", ]
+koszyk.lubel44<-essa[essa$Nazwa == "ŚLĄSKIE", ]
+koszyk.lubel5<-essa[essa$Nazwa == "ŚWIĘTOKRZYSKIE", ]
+koszyk.lubel55<-essa[essa$Nazwa == "WARMIŃSKO-MAZURSKIE", ]
+koszyk.lubel6<-essa[essa$Nazwa == "WIELKOPOLSKIE", ]
+koszyk.lubel66<-essa[essa$Nazwa == "ZACHODNIOPOMORSKIE", ]
+koszyk.lubel7<-essa[essa$Nazwa == "PODKARPACKIE", ]
+
+koszyk.dolno.06<-koszyk.dolno[koszyk.dolno$Rok=="2006",]
+vec.koszyk.dolno.06<-c(koszyk.dolno.06$Wartosc)
+vec.koszyk.dolno.06<-as.numeric(vec.koszyk.dolno.06)
+mean.koszyk.dolno.06<-mean(vec.koszyk.dolno.06, na.rm=TRUE)
+
+koszyk.dolno.07<-koszyk.dolno[koszyk.dolno$Rok=="2007",]
+vec.koszyk.dolno.07<-c(koszyk.dolno.07$Wartosc)
+vec.koszyk.dolno.07<-as.numeric(vec.koszyk.dolno.07)
+mean.koszyk.dolno.07<-mean(vec.koszyk.dolno.07, na.rm=TRUE)
+
+
+koszyk.dolno.08<-koszyk.dolno[koszyk.dolno$Rok=="2008",]
+vec.koszyk.dolno.08<-c(koszyk.dolno.08$Wartosc)
+vec.koszyk.dolno.08<-as.numeric(vec.koszyk.dolno.08)
+mean.koszyk.dolno.08<-mean(vec.koszyk.dolno.08, na.rm=TRUE)
+
+koszyk.dolno.09<-koszyk.dolno[koszyk.dolno$Rok=="2009",]
+vec.koszyk.dolno.09<-c(koszyk.dolno.09$Wartosc)
+vec.koszyk.dolno.09<-as.numeric(vec.koszyk.dolno.09)
+mean.koszyk.dolno.09<-mean(vec.koszyk.dolno.09, na.rm=TRUE)
+
+koszyk.dolno.10<-koszyk.dolno[koszyk.dolno$Rok=="2010",]
+vec.koszyk.dolno.10<-c(koszyk.dolno.10$Wartosc)
+vec.koszyk.dolno.10<-as.numeric(vec.koszyk.dolno.10)
+mean.koszyk.dolno.10<-mean(vec.koszyk.dolno.10, na.rm=TRUE)
+
+koszyk.dolno.11<-koszyk.dolno[koszyk.dolno$Rok=="2011",]
+vec.koszyk.dolno.11<-c(koszyk.dolno.11$Wartosc)
+vec.koszyk.dolno.11<-as.numeric(vec.koszyk.dolno.11)
+mean.koszyk.dolno.11<-mean(vec.koszyk.dolno.11, na.rm=TRUE)
+
+koszyk.dolno.12<-koszyk.dolno[koszyk.dolno$Rok=="2012",]
+vec.koszyk.dolno.12<-c(koszyk.dolno.12$Wartosc)
+vec.koszyk.dolno.12<-as.numeric(vec.koszyk.dolno.12)
+mean.koszyk.dolno.12<-mean(vec.koszyk.dolno.12, na.rm=TRUE)
+
+koszyk.dolno.13<-koszyk.dolno[koszyk.dolno$Rok=="2013",]
+vec.koszyk.dolno.13<-c(koszyk.dolno.13$Wartosc)
+vec.koszyk.dolno.13<-as.numeric(vec.koszyk.dolno.13)
+mean.koszyk.dolno.13<-mean(vec.koszyk.dolno.13, na.rm=TRUE)
+
+koszyk.dolno.14<-koszyk.dolno[koszyk.dolno$Rok=="2014",]
+vec.koszyk.dolno.14<-c(koszyk.dolno.14$Wartosc)
+vec.koszyk.dolno.14<-as.numeric(vec.koszyk.dolno.14)
+mean.koszyk.dolno.14<-mean(vec.koszyk.dolno.14, na.rm=TRUE)
+
+koszyk.dolno.15<-koszyk.dolno[koszyk.dolno$Rok=="2015",]
+vec.koszyk.dolno.15<-c(koszyk.dolno.15$Wartosc)
+vec.koszyk.dolno.15<-as.numeric(vec.koszyk.dolno.15)
+mean.koszyk.dolno.15<-mean(vec.koszyk.dolno.15, na.rm=TRUE)
+
+koszyk.dolno.16<-koszyk.dolno[koszyk.dolno$Rok=="2016",]
+vec.koszyk.dolno.16<-c(koszyk.dolno.16$Wartosc)
+vec.koszyk.dolno.16<-as.numeric(vec.koszyk.dolno.16)
+mean.koszyk.dolno.16<-mean(vec.koszyk.dolno.16, na.rm=TRUE)
+
+koszyk.dolno.17<-koszyk.dolno[koszyk.dolno$Rok=="2017",]
+vec.koszyk.dolno.17<-c(koszyk.dolno.17$Wartosc)
+vec.koszyk.dolno.17<-as.numeric(vec.koszyk.dolno.17)
+mean.koszyk.dolno.17<-mean(vec.koszyk.dolno.17, na.rm=TRUE)
+
+koszyk.dolno.18<-koszyk.dolno[koszyk.dolno$Rok=="2018",]
+vec.koszyk.dolno.18<-c(koszyk.dolno.18$Wartosc)
+vec.koszyk.dolno.18<-as.numeric(vec.koszyk.dolno.18)
+mean.koszyk.dolno.18<-mean(vec.koszyk.dolno.18, na.rm=TRUE)
+
+koszyk.dolno.19<-koszyk.dolno[koszyk.dolno$Rok=="2019",]
+vec.koszyk.dolno.19<-c(koszyk.dolno.19$Wartosc)
+vec.koszyk.dolno.19<-as.numeric(vec.koszyk.dolno.19)
+mean.koszyk.dolno.19<-mean(vec.koszyk.dolno.19, na.rm=TRUE)
+
+srednia.koszyk.dolno<-c(mean.koszyk.dolno.06,mean.koszyk.dolno.07,mean.koszyk.dolno.08,mean.koszyk.dolno.09,mean.koszyk.dolno.10,
+                       mean.koszyk.dolno.11,mean.koszyk.dolno.12,mean.koszyk.dolno.13,mean.koszyk.dolno.14,
+                       mean.koszyk.dolno.15,mean.koszyk.dolno.16,mean.koszyk.dolno.17,mean.koszyk.dolno.18,mean.koszyk.dolno.19)
+
+lata<-c(2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019)
+png(file = "koszyk.dolno.jpg")
+plot(srednia.koszyk.dolno,type = "o", col = "red", xlab='', ylab = "",ylim=c(10,25),
+     main = "Średnia cena za zakupy w Dolnośląskim",xaxt = 'n')
+lablist<-as.vector(c(2006:2019))
+axis(1, at=seq(1, 14, by=1), labels = FALSE)
+text(seq(1, 14, by=1), par("usr")[3] - 0.2, labels = lablist, srt = 45, pos = 1, xpd = TRUE)
+dev.off()
+
+########################################################################################################
+koszyk.kujawsko.06<-koszyk.kujawsko[koszyk.kujawsko$Rok=="2006",]
+vec.koszyk.kujawsko.06<-c(koszyk.kujawsko.06$Wartosc)
+vec.koszyk.kujawsko.06<-as.numeric(vec.koszyk.kujawsko.06)
+mean.koszyk.kujawsko.06<-mean(vec.koszyk.kujawsko.06, na.rm=TRUE)
+
+koszyk.kujawsko.07<-koszyk.kujawsko[koszyk.kujawsko$Rok=="2007",]
+vec.koszyk.kujawsko.07<-c(koszyk.kujawsko.07$Wartosc)
+vec.koszyk.kujawsko.07<-as.numeric(vec.koszyk.kujawsko.07)
+mean.koszyk.kujawsko.07<-mean(vec.koszyk.kujawsko.07, na.rm=TRUE)
+
+
+koszyk.kujawsko.08<-koszyk.kujawsko[koszyk.kujawsko$Rok=="2008",]
+vec.koszyk.kujawsko.08<-c(koszyk.kujawsko.08$Wartosc)
+vec.koszyk.kujawsko.08<-as.numeric(vec.koszyk.kujawsko.08)
+mean.koszyk.kujawsko.08<-mean(vec.koszyk.kujawsko.08, na.rm=TRUE)
+
+koszyk.kujawsko.09<-koszyk.kujawsko[koszyk.kujawsko$Rok=="2009",]
+vec.koszyk.kujawsko.09<-c(koszyk.kujawsko.09$Wartosc)
+vec.koszyk.kujawsko.09<-as.numeric(vec.koszyk.kujawsko.09)
+mean.koszyk.kujawsko.09<-mean(vec.koszyk.kujawsko.09, na.rm=TRUE)
+
+koszyk.kujawsko.10<-koszyk.kujawsko[koszyk.kujawsko$Rok=="2010",]
+vec.koszyk.kujawsko.10<-c(koszyk.kujawsko.10$Wartosc)
+vec.koszyk.kujawsko.10<-as.numeric(vec.koszyk.kujawsko.10)
+mean.koszyk.kujawsko.10<-mean(vec.koszyk.kujawsko.10, na.rm=TRUE)
+
+koszyk.kujawsko.11<-koszyk.kujawsko[koszyk.kujawsko$Rok=="2011",]
+vec.koszyk.kujawsko.11<-c(koszyk.kujawsko.11$Wartosc)
+vec.koszyk.kujawsko.11<-as.numeric(vec.koszyk.kujawsko.11)
+mean.koszyk.kujawsko.11<-mean(vec.koszyk.kujawsko.11, na.rm=TRUE)
+
+koszyk.kujawsko.12<-koszyk.kujawsko[koszyk.kujawsko$Rok=="2012",]
+vec.koszyk.kujawsko.12<-c(koszyk.kujawsko.12$Wartosc)
+vec.koszyk.kujawsko.12<-as.numeric(vec.koszyk.kujawsko.12)
+mean.koszyk.kujawsko.12<-mean(vec.koszyk.kujawsko.12, na.rm=TRUE)
+
+koszyk.kujawsko.13<-koszyk.dolno[koszyk.dolno$Rok=="2013",]
+vec.koszyk.kujawsko.13<-c(koszyk.dolno.13$Wartosc)
+vec.koszyk.kujawsko.13<-as.numeric(vec.koszyk.dolno.13)
+mean.koszyk.kujawsko.13<-mean(vec.koszyk.dolno.13, na.rm=TRUE)
+
+koszyk.kujawsko.14<-koszyk.kujawsko[koszyk.kujawsko$Rok=="2014",]
+vec.koszyk.kujawsko.14<-c(koszyk.kujawsko.14$Wartosc)
+vec.koszyk.kujawsko.14<-as.numeric(vec.koszyk.kujawsko.14)
+mean.koszyk.kujawsko.14<-mean(vec.koszyk.kujawsko.14, na.rm=TRUE)
+
+koszyk.kujawsko.15<-koszyk.kujawsko[koszyk.kujawsko$Rok=="2015",]
+vec.koszyk.kujawsko.15<-c(koszyk.kujawsko.15$Wartosc)
+vec.koszyk.kujawsko.15<-as.numeric(vec.koszyk.kujawsko.15)
+mean.koszyk.kujawsko.15<-mean(vec.koszyk.kujawsko.15, na.rm=TRUE)
+
+koszyk.kujawsko.16<-koszyk.kujawsko[koszyk.kujawsko$Rok=="2016",]
+vec.koszyk.kujawsko.16<-c(koszyk.kujawsko.16$Wartosc)
+vec.koszyk.kujawsko.16<-as.numeric(vec.koszyk.kujawsko.16)
+mean.koszyk.kujawsko.16<-mean(vec.koszyk.kujawsko.16, na.rm=TRUE)
+
+koszyk.kujawsko.17<-koszyk.kujawsko[koszyk.kujawsko$Rok=="2017",]
+vec.koszyk.kujawsko.17<-c(koszyk.kujawsko.17$Wartosc)
+vec.koszyk.kujawsko.17<-as.numeric(vec.koszyk.kujawsko.17)
+mean.koszyk.kujawsko.17<-mean(vec.koszyk.kujawsko.17, na.rm=TRUE)
+
+koszyk.kujawsko.18<-koszyk.kujawsko[koszyk.kujawsko$Rok=="2018",]
+vec.koszyk.kujawsko.18<-c(koszyk.kujawsko.18$Wartosc)
+vec.koszyk.kujawsko.18<-as.numeric(vec.koszyk.kujawsko.18)
+mean.koszyk.kujawsko.18<-mean(vec.koszyk.kujawsko.18, na.rm=TRUE)
+
+koszyk.kujawsko.19<-koszyk.kujawsko[koszyk.kujawsko$Rok=="2019",]
+vec.koszyk.kujawsko.19<-c(koszyk.kujawsko.19$Wartosc)
+vec.koszyk.kujawsko.19<-as.numeric(vec.koszyk.kujawsko.19)
+mean.koszyk.kujawsko.19<-mean(vec.koszyk.kujawsko.19, na.rm=TRUE)
+
+srednia.koszyk.kujawsko<-c(mean.koszyk.kujawsko.06,mean.koszyk.kujawsko.07,mean.koszyk.kujawsko.08,mean.koszyk.kujawsko.09,
+                           mean.koszyk.kujawsko.10,mean.koszyk.kujawsko.11,mean.koszyk.kujawsko.12,mean.koszyk.kujawsko.13,
+                           mean.koszyk.kujawsko.14,mean.koszyk.kujawsko.15,mean.koszyk.kujawsko.16,mean.koszyk.kujawsko.17,
+                           mean.koszyk.kujawsko.18,mean.koszyk.kujawsko.19)
+
+lata<-c(2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019)
+png(file = "koszyk.kujawsko.jpg")
+plot(srednia.koszyk.kujawsko,type = "o", col = "red", xlab='', ylab = "",ylim=c(10,25),
+     main = "Średnia cena za zakupy w Kujawsko-Pomorskim",xaxt = 'n')
+lablist<-as.vector(c(2006:2019))
+axis(1, at=seq(1, 14, by=1), labels = FALSE)
+text(seq(1, 14, by=1), par("usr")[3] - 0.2, labels = lablist, srt = 45, pos = 1, xpd = TRUE)
+dev.off()
+
+########################################################################################################
+koszyk.lubel.06<-koszyk.lubel[koszyk.lubel$Rok=="2006",]
+vec.koszyk.lubel.06<-c(koszyk.lubel.06$Wartosc)
+vec.koszyk.lubel.06<-as.numeric(vec.koszyk.lubel.06)
+mean.koszyk.lubel.06<-mean(vec.koszyk.lubel.06, na.rm=TRUE)
+
+koszyk.lubel.07<-koszyk.lubel[koszyk.lubel$Rok=="2007",]
+vec.koszyk.lubel.07<-c(koszyk.lubel.07$Wartosc)
+vec.koszyk.lubel.07<-as.numeric(vec.koszyk.lubel.07)
+mean.koszyk.lubel.07<-mean(vec.koszyk.lubel.07, na.rm=TRUE)
+
+koszyk.lubel.08<-koszyk.lubel[koszyk.lubel$Rok=="2008",]
+vec.koszyk.lubel.08<-c(koszyk.lubel.08$Wartosc)
+vec.koszyk.lubel.08<-as.numeric(vec.koszyk.lubel.08)
+mean.koszyk.lubel.08<-mean(vec.koszyk.lubel.08, na.rm=TRUE)
+
+koszyk.lubel.09<-koszyk.lubel[koszyk.lubel$Rok=="2009",]
+vec.koszyk.lubel.09<-c(koszyk.lubel.09$Wartosc)
+vec.koszyk.lubel.09<-as.numeric(vec.koszyk.lubel.09)
+mean.koszyk.lubel.09<-mean(vec.koszyk.lubel.09, na.rm=TRUE)
+
+koszyk.lubel.10<-koszyk.lubel[koszyk.lubel$Rok=="2010",]
+vec.koszyk.lubel.10<-c(koszyk.lubel.10$Wartosc)
+vec.koszyk.lubel.10<-as.numeric(vec.koszyk.lubel.10)
+mean.koszyk.lubel.10<-mean(vec.koszyk.lubel.10, na.rm=TRUE)
+
+koszyk.lubel.11<-koszyk.lubel[koszyk.lubel$Rok=="2011",]
+vec.koszyk.lubel.11<-c(koszyk.lubel.11$Wartosc)
+vec.koszyk.lubel.11<-as.numeric(vec.koszyk.lubel.11)
+mean.koszyk.lubel.11<-mean(vec.koszyk.lubel.11, na.rm=TRUE)
+
+koszyk.lubel.12<-koszyk.lubel[koszyk.lubel$Rok=="2012",]
+vec.koszyk.lubel.12<-c(koszyk.lubel.12$Wartosc)
+vec.koszyk.lubel.12<-as.numeric(vec.koszyk.lubel.12)
+mean.koszyk.lubel.12<-mean(vec.koszyk.lubel.12, na.rm=TRUE)
+
+koszyk.lubel.13<-koszyk.lubel[koszyk.lubel$Rok=="2013",]
+vec.koszyk.lubel.13<-c(koszyk.lubel.13$Wartosc)
+vec.koszyk.lubel.13<-as.numeric(vec.koszyk.lubel.13)
+mean.koszyk.lubel.13<-mean(vec.koszyk.lubel.13, na.rm=TRUE)
+
+koszyk.lubel.14<-koszyk.lubel[koszyk.lubel$Rok=="2014",]
+vec.koszyk.lubel.14<-c(koszyk.lubel.14$Wartosc)
+vec.koszyk.lubel.14<-as.numeric(vec.koszyk.lubel.14)
+mean.koszyk.lubel.14<-mean(vec.koszyk.lubel.14, na.rm=TRUE)
+
+koszyk.lubel.15<-koszyk.lubel[koszyk.lubel$Rok=="2015",]
+vec.koszyk.lubel.15<-c(koszyk.lubel.15$Wartosc)
+vec.koszyk.lubel.15<-as.numeric(vec.koszyk.lubel.15)
+mean.koszyk.lubel.15<-mean(vec.koszyk.lubel.15, na.rm=TRUE)
+
+koszyk.lubel.16<-koszyk.lubel[koszyk.lubel$Rok=="2016",]
+vec.koszyk.lubel.16<-c(koszyk.lubel.16$Wartosc)
+vec.koszyk.lubel.16<-as.numeric(vec.koszyk.lubel.16)
+mean.koszyk.lubel.16<-mean(vec.koszyk.lubel.16, na.rm=TRUE)
+
+koszyk.lubel.17<-koszyk.lubel[koszyk.lubel$Rok=="2017",]
+vec.koszyk.lubel.17<-c(koszyk.lubel.17$Wartosc)
+vec.koszyk.lubel.17<-as.numeric(vec.koszyk.lubel.17)
+mean.koszyk.lubel.17<-mean(vec.koszyk.lubel.17, na.rm=TRUE)
+
+koszyk.lubel.18<-koszyk.lubel[koszyk.lubel$Rok=="2018",]
+vec.koszyk.lubel.18<-c(koszyk.lubel.18$Wartosc)
+vec.koszyk.lubel.18<-as.numeric(vec.koszyk.lubel.18)
+mean.koszyk.lubel.18<-mean(vec.koszyk.lubel.18, na.rm=TRUE)
+
+koszyk.lubel.19<-koszyk.lubel[koszyk.lubel$Rok=="2019",]
+vec.koszyk.lubel.19<-c(koszyk.lubel.19$Wartosc)
+vec.koszyk.lubel.19<-as.numeric(vec.koszyk.lubel.19)
+mean.koszyk.lubel.19<-mean(vec.koszyk.lubel.19, na.rm=TRUE)
+
+srednia.koszyk.lubel<-c(mean.koszyk.lubel.06,mean.koszyk.lubel.07,mean.koszyk.lubel.08,mean.koszyk.lubel.09,
+                        mean.koszyk.lubel.10,mean.koszyk.lubel.11,mean.koszyk.lubel.12,mean.koszyk.lubel.13,
+                        mean.koszyk.lubel.14,mean.koszyk.lubel.15,mean.koszyk.lubel.16,mean.koszyk.lubel.17,
+                        mean.koszyk.lubel.18,mean.koszyk.lubel.19)
+
+lata<-c(2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019)
+png(file = "koszyk.lubelski.jpg")
+plot(srednia.koszyk.lubel,type = "o", col = "red", xlab='', ylab = "",ylim=c(10,25),
+     main = "Średnia cena za zakupy w Lubelskim",xaxt = 'n')
+lablist<-as.vector(c(2006:2019))
+axis(1, at=seq(1, 14, by=1), labels = FALSE)
+text(seq(1, 14, by=1), par("usr")[3] - 0.2, labels = lablist, srt = 45, pos = 1, xpd = TRUE)
+dev.off()
+
+########################################################################################################
+koszyk.lubel1.06<-koszyk.lubel1[koszyk.lubel1$Rok=="2006",]
+vec.koszyk.lubel1.06<-c(koszyk.lubel1.06$Wartosc)
+vec.koszyk.lubel1.06<-as.numeric(vec.koszyk.lubel1.06)
+mean.koszyk.lubel1.06<-mean(vec.koszyk.lubel1.06, na.rm=TRUE)
+
+koszyk.lubel1.07<-koszyk.lubel1[koszyk.lubel1$Rok=="2007",]
+vec.koszyk.lubel1.07<-c(koszyk.lubel1.07$Wartosc)
+vec.koszyk.lubel1.07<-as.numeric(vec.koszyk.lubel1.07)
+mean.koszyk.lubel1.07<-mean(vec.koszyk.lubel1.07, na.rm=TRUE)
+
+
+koszyk.lubel1.08<-koszyk.lubel1[koszyk.lubel1$Rok=="2008",]
+vec.koszyk.lubel1.08<-c(koszyk.lubel1.08$Wartosc)
+vec.koszyk.lubel1.08<-as.numeric(vec.koszyk.lubel1.08)
+mean.koszyk.lubel1.08<-mean(vec.koszyk.lubel1.08, na.rm=TRUE)
+
+koszyk.lubel1.09<-koszyk.lubel1[koszyk.lubel1$Rok=="2009",]
+vec.koszyk.lubel1.09<-c(koszyk.lubel1.09$Wartosc)
+vec.koszyk.lubel1.09<-as.numeric(vec.koszyk.lubel1.09)
+mean.koszyk.lubel1.09<-mean(vec.koszyk.lubel1.09, na.rm=TRUE)
+
+koszyk.lubel1.10<-koszyk.lubel1[koszyk.lubel1$Rok=="2010",]
+vec.koszyk.lubel1.10<-c(koszyk.lubel1.10$Wartosc)
+vec.koszyk.lubel1.10<-as.numeric(vec.koszyk.lubel1.10)
+mean.koszyk.lubel1.10<-mean(vec.koszyk.lubel1.10, na.rm=TRUE)
+
+koszyk.lubel1.11<-koszyk.lubel1[koszyk.lubel1$Rok=="2011",]
+vec.koszyk.lubel1.11<-c(koszyk.lubel1.11$Wartosc)
+vec.koszyk.lubel1.11<-as.numeric(vec.koszyk.lubel1.11)
+mean.koszyk.lubel1.11<-mean(vec.koszyk.lubel1.11, na.rm=TRUE)
+
+koszyk.lubel1.12<-koszyk.lubel1[koszyk.lubel1$Rok=="2012",]
+vec.koszyk.lubel1.12<-c(koszyk.lubel1.12$Wartosc)
+vec.koszyk.lubel1.12<-as.numeric(vec.koszyk.lubel1.12)
+mean.koszyk.lubel1.12<-mean(vec.koszyk.lubel1.12, na.rm=TRUE)
+
+koszyk.lubel1.13<-koszyk.lubel1[koszyk.lubel1$Rok=="2013",]
+vec.koszyk.lubel1.13<-c(koszyk.lubel1.13$Wartosc)
+vec.koszyk.lubel1.13<-as.numeric(vec.koszyk.lubel1.13)
+mean.koszyk.lubel1.13<-mean(vec.koszyk.lubel1.13, na.rm=TRUE)
+
+koszyk.lubel1.14<-koszyk.lubel1[koszyk.lubel1$Rok=="2014",]
+vec.koszyk.lubel1.14<-c(koszyk.lubel1.14$Wartosc)
+vec.koszyk.lubel1.14<-as.numeric(vec.koszyk.lubel1.14)
+mean.koszyk.lubel1.14<-mean(vec.koszyk.lubel1.14, na.rm=TRUE)
+
+koszyk.lubel1.15<-koszyk.lubel1[koszyk.lubel1$Rok=="2015",]
+vec.koszyk.lubel1.15<-c(koszyk.lubel1.15$Wartosc)
+vec.koszyk.lubel1.15<-as.numeric(vec.koszyk.lubel1.15)
+mean.koszyk.lubel1.15<-mean(vec.koszyk.lubel1.15, na.rm=TRUE)
+
+koszyk.lubel1.16<-koszyk.lubel1[koszyk.lubel1$Rok=="2016",]
+vec.koszyk.lubel1.16<-c(koszyk.lubel1.16$Wartosc)
+vec.koszyk.lubel1.16<-as.numeric(vec.koszyk.lubel1.16)
+mean.koszyk.lubel1.16<-mean(vec.koszyk.lubel1.16, na.rm=TRUE)
+
+koszyk.lubel1.17<-koszyk.lubel1[koszyk.lubel1$Rok=="2017",]
+vec.koszyk.lubel1.17<-c(koszyk.lubel1.17$Wartosc)
+vec.koszyk.lubel1.17<-as.numeric(vec.koszyk.lubel1.17)
+mean.koszyk.lubel1.17<-mean(vec.koszyk.lubel1.17, na.rm=TRUE)
+
+koszyk.lubel1.18<-koszyk.lubel1[koszyk.lubel1$Rok=="2018",]
+vec.koszyk.lubel1.18<-c(koszyk.lubel1.18$Wartosc)
+vec.koszyk.lubel1.18<-as.numeric(vec.koszyk.lubel1.18)
+mean.koszyk.lubel1.18<-mean(vec.koszyk.lubel1.18, na.rm=TRUE)
+
+koszyk.lubel1.19<-koszyk.lubel1[koszyk.lubel1$Rok=="2019",]
+vec.koszyk.lubel1.19<-c(koszyk.lubel1.19$Wartosc)
+vec.koszyk.lubel1.19<-as.numeric(vec.koszyk.lubel1.19)
+mean.koszyk.lubel1.19<-mean(vec.koszyk.lubel1.19, na.rm=TRUE)
+
+srednia.koszyk.lubel1<-c(mean.koszyk.lubel1.06,mean.koszyk.lubel1.07,mean.koszyk.lubel1.08,mean.koszyk.lubel1.09,
+                        mean.koszyk.lubel1.10,mean.koszyk.lubel1.11,mean.koszyk.lubel1.12,mean.koszyk.lubel1.13,
+                        mean.koszyk.lubel1.14,mean.koszyk.lubel1.15,mean.koszyk.lubel1.16,mean.koszyk.lubel1.17,
+                        mean.koszyk.lubel1.18,mean.koszyk.lubel1.19)
+
+lata<-c(2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019)
+png(file = "koszyk.lubuskie.jpg")
+plot(srednia.koszyk.lubel1,type = "o", col = "red", xlab='', ylab = "",ylim=c(10,25),
+     main = "Średnia cena za zakupy w Lubuskim",xaxt = 'n')
+lablist<-as.vector(c(2006:2019))
+axis(1, at=seq(1, 14, by=1), labels = FALSE)
+text(seq(1, 14, by=1), par("usr")[3] - 0.2, labels = lablist, srt = 45, pos = 1, xpd = TRUE)
+dev.off()
+
+########################################################################################################
+koszyk.lubel11.06<-koszyk.lubel11[koszyk.lubel11$Rok=="2006",]
+vec.koszyk.lubel11.06<-c(koszyk.lubel11.06$Wartosc)
+vec.koszyk.lubel11.06<-as.numeric(vec.koszyk.lubel11.06)
+mean.koszyk.lubel11.06<-mean(vec.koszyk.lubel11.06, na.rm=TRUE)
+
+koszyk.lubel11.07<-koszyk.lubel11[koszyk.lubel11$Rok=="2007",]
+vec.koszyk.lubel11.07<-c(koszyk.lubel11.07$Wartosc)
+vec.koszyk.lubel11.07<-as.numeric(vec.koszyk.lubel11.07)
+mean.koszyk.lubel11.07<-mean(vec.koszyk.lubel11.07, na.rm=TRUE)
+
+
+koszyk.lubel11.08<-koszyk.lubel11[koszyk.lubel11$Rok=="2008",]
+vec.koszyk.lubel11.08<-c(koszyk.lubel11.08$Wartosc)
+vec.koszyk.lubel11.08<-as.numeric(vec.koszyk.lubel11.08)
+mean.koszyk.lubel11.08<-mean(vec.koszyk.lubel11.08, na.rm=TRUE)
+
+koszyk.lubel11.09<-koszyk.lubel11[koszyk.lubel11$Rok=="2009",]
+vec.koszyk.lubel11.09<-c(koszyk.lubel11.09$Wartosc)
+vec.koszyk.lubel11.09<-as.numeric(vec.koszyk.lubel11.09)
+mean.koszyk.lubel11.09<-mean(vec.koszyk.lubel11.09, na.rm=TRUE)
+
+koszyk.lubel11.10<-koszyk.lubel11[koszyk.lubel11$Rok=="2010",]
+vec.koszyk.lubel11.10<-c(koszyk.lubel11.10$Wartosc)
+vec.koszyk.lubel11.10<-as.numeric(vec.koszyk.lubel11.10)
+mean.koszyk.lubel11.10<-mean(vec.koszyk.lubel11.10, na.rm=TRUE)
+
+koszyk.lubel11.11<-koszyk.lubel11[koszyk.lubel11$Rok=="2011",]
+vec.koszyk.lubel11.11<-c(koszyk.lubel11.11$Wartosc)
+vec.koszyk.lubel11.11<-as.numeric(vec.koszyk.lubel11.11)
+mean.koszyk.lubel11.11<-mean(vec.koszyk.lubel11.11, na.rm=TRUE)
+
+koszyk.lubel11.12<-koszyk.lubel11[koszyk.lubel11$Rok=="2012",]
+vec.koszyk.lubel11.12<-c(koszyk.lubel11.12$Wartosc)
+vec.koszyk.lubel11.12<-as.numeric(vec.koszyk.lubel11.12)
+mean.koszyk.lubel11.12<-mean(vec.koszyk.lubel11.12, na.rm=TRUE)
+
+koszyk.lubel11.13<-koszyk.lubel11[koszyk.lubel11$Rok=="2013",]
+vec.koszyk.lubel11.13<-c(koszyk.lubel11.13$Wartosc)
+vec.koszyk.lubel11.13<-as.numeric(vec.koszyk.lubel11.13)
+mean.koszyk.lubel11.13<-mean(vec.koszyk.lubel11.13, na.rm=TRUE)
+
+koszyk.lubel11.14<-koszyk.lubel11[koszyk.lubel11$Rok=="2014",]
+vec.koszyk.lubel11.14<-c(koszyk.lubel11.14$Wartosc)
+vec.koszyk.lubel11.14<-as.numeric(vec.koszyk.lubel11.14)
+mean.koszyk.lubel11.14<-mean(vec.koszyk.lubel11.14, na.rm=TRUE)
+
+koszyk.lubel11.15<-koszyk.lubel11[koszyk.lubel11$Rok=="2015",]
+vec.koszyk.lubel11.15<-c(koszyk.lubel11.15$Wartosc)
+vec.koszyk.lubel11.15<-as.numeric(vec.koszyk.lubel11.15)
+mean.koszyk.lubel11.15<-mean(vec.koszyk.lubel11.15, na.rm=TRUE)
+
+koszyk.lubel11.16<-koszyk.lubel11[koszyk.lubel11$Rok=="2016",]
+vec.koszyk.lubel11.16<-c(koszyk.lubel11.16$Wartosc)
+vec.koszyk.lubel11.16<-as.numeric(vec.koszyk.lubel11.16)
+mean.koszyk.lubel11.16<-mean(vec.koszyk.lubel11.16, na.rm=TRUE)
+
+koszyk.lubel11.17<-koszyk.lubel11[koszyk.lubel11$Rok=="2017",]
+vec.koszyk.lubel11.17<-c(koszyk.lubel11.17$Wartosc)
+vec.koszyk.lubel11.17<-as.numeric(vec.koszyk.lubel11.17)
+mean.koszyk.lubel11.17<-mean(vec.koszyk.lubel11.17, na.rm=TRUE)
+
+koszyk.lubel11.18<-koszyk.lubel11[koszyk.lubel11$Rok=="2018",]
+vec.koszyk.lubel11.18<-c(koszyk.lubel11.18$Wartosc)
+vec.koszyk.lubel11.18<-as.numeric(vec.koszyk.lubel11.18)
+mean.koszyk.lubel11.18<-mean(vec.koszyk.lubel11.18, na.rm=TRUE)
+
+koszyk.lubel11.19<-koszyk.lubel1[koszyk.lubel11$Rok=="2019",]
+vec.koszyk.lubel11.19<-c(koszyk.lubel11.19$Wartosc)
+vec.koszyk.lubel11.19<-as.numeric(vec.koszyk.lubel11.19)
+mean.koszyk.lubel11.19<-mean(vec.koszyk.lubel11.19, na.rm=TRUE)
+
+srednia.koszyk.lubel11<-c(mean.koszyk.lubel11.06,mean.koszyk.lubel11.07,mean.koszyk.lubel11.08,mean.koszyk.lubel11.09,
+                          mean.koszyk.lubel11.10,mean.koszyk.lubel11.11,mean.koszyk.lubel11.12,mean.koszyk.lubel11.13,
+                          mean.koszyk.lubel11.14,mean.koszyk.lubel11.15,mean.koszyk.lubel11.16,mean.koszyk.lubel11.17,
+                          mean.koszyk.lubel11.18,mean.koszyk.lubel11.19)
+
+lata<-c(2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019)
+png(file = "koszyk.lodzkie.jpg")
+plot(srednia.koszyk.lubel11,type = "o", col = "red", xlab='', ylab = "",ylim=c(10,25),
+     main = "Średnia cena za zakupy w Łódzkim",xaxt = 'n')
+lablist<-as.vector(c(2006:2019))
+axis(1, at=seq(1, 14, by=1), labels = FALSE)
+text(seq(1, 14, by=1), par("usr")[3] - 0.2, labels = lablist, srt = 45, pos = 1, xpd = TRUE)
+dev.off()
+
+########################################################################################################
+koszyk.lubel2.06<-koszyk.lubel2[koszyk.lubel2$Rok=="2006",]
+vec.koszyk.lubel2.06<-c(koszyk.lubel2.06$Wartosc)
+vec.koszyk.lubel2.06<-as.numeric(vec.koszyk.lubel2.06)
+mean.koszyk.lubel2.06<-mean(vec.koszyk.lubel2.06, na.rm=TRUE)
+
+koszyk.lubel2.07<-koszyk.lubel2[koszyk.lubel2$Rok=="2007",]
+vec.koszyk.lubel2.07<-c(koszyk.lubel2.07$Wartosc)
+vec.koszyk.lubel2.07<-as.numeric(vec.koszyk.lubel2.07)
+mean.koszyk.lubel2.07<-mean(vec.koszyk.lubel2.07, na.rm=TRUE)
+
+
+koszyk.lubel2.08<-koszyk.lubel2[koszyk.lubel2$Rok=="2008",]
+vec.koszyk.lubel2.08<-c(koszyk.lubel2.08$Wartosc)
+vec.koszyk.lubel2.08<-as.numeric(vec.koszyk.lubel2.08)
+mean.koszyk.lubel2.08<-mean(vec.koszyk.lubel2.08, na.rm=TRUE)
+
+koszyk.lubel2.09<-koszyk.lubel2[koszyk.lubel2$Rok=="2009",]
+vec.koszyk.lubel2.09<-c(koszyk.lubel2.09$Wartosc)
+vec.koszyk.lubel2.09<-as.numeric(vec.koszyk.lubel2.09)
+mean.koszyk.lubel2.09<-mean(vec.koszyk.lubel2.09, na.rm=TRUE)
+
+koszyk.lubel2.10<-koszyk.lubel2[koszyk.lubel2$Rok=="2010",]
+vec.koszyk.lubel2.10<-c(koszyk.lubel2.10$Wartosc)
+vec.koszyk.lubel2.10<-as.numeric(vec.koszyk.lubel2.10)
+mean.koszyk.lubel2.10<-mean(vec.koszyk.lubel2.10, na.rm=TRUE)
+
+koszyk.lubel2.11<-koszyk.lubel2[koszyk.lubel2$Rok=="2011",]
+vec.koszyk.lubel2.11<-c(koszyk.lubel2.11$Wartosc)
+vec.koszyk.lubel2.11<-as.numeric(vec.koszyk.lubel2.11)
+mean.koszyk.lubel2.11<-mean(vec.koszyk.lubel2.11, na.rm=TRUE)
+
+koszyk.lubel2.12<-koszyk.lubel2[koszyk.lubel2$Rok=="2012",]
+vec.koszyk.lubel2.12<-c(koszyk.lubel2.12$Wartosc)
+vec.koszyk.lubel2.12<-as.numeric(vec.koszyk.lubel2.12)
+mean.koszyk.lubel2.12<-mean(vec.koszyk.lubel2.12, na.rm=TRUE)
+
+koszyk.lubel2.13<-koszyk.lubel2[koszyk.lubel2$Rok=="2013",]
+vec.koszyk.lubel2.13<-c(koszyk.lubel2.13$Wartosc)
+vec.koszyk.lubel2.13<-as.numeric(vec.koszyk.lubel2.13)
+mean.koszyk.lubel2.13<-mean(vec.koszyk.lubel2.13, na.rm=TRUE)
+
+koszyk.lubel2.14<-koszyk.lubel2[koszyk.lubel2$Rok=="2014",]
+vec.koszyk.lubel2.14<-c(koszyk.lubel2.14$Wartosc)
+vec.koszyk.lubel2.14<-as.numeric(vec.koszyk.lubel2.14)
+mean.koszyk.lubel2.14<-mean(vec.koszyk.lubel2.14, na.rm=TRUE)
+
+koszyk.lubel2.15<-koszyk.lubel2[koszyk.lubel2$Rok=="2015",]
+vec.koszyk.lubel2.15<-c(koszyk.lubel2.15$Wartosc)
+vec.koszyk.lubel2.15<-as.numeric(vec.koszyk.lubel2.15)
+mean.koszyk.lubel2.15<-mean(vec.koszyk.lubel2.15, na.rm=TRUE)
+
+koszyk.lubel2.16<-koszyk.lubel2[koszyk.lubel2$Rok=="2016",]
+vec.koszyk.lubel2.16<-c(koszyk.lubel2.16$Wartosc)
+vec.koszyk.lubel2.16<-as.numeric(vec.koszyk.lubel2.16)
+mean.koszyk.lubel2.16<-mean(vec.koszyk.lubel2.16, na.rm=TRUE)
+
+koszyk.lubel2.17<-koszyk.lubel2[koszyk.lubel2$Rok=="2017",]
+vec.koszyk.lubel2.17<-c(koszyk.lubel2.17$Wartosc)
+vec.koszyk.lubel2.17<-as.numeric(vec.koszyk.lubel2.17)
+mean.koszyk.lubel2.17<-mean(vec.koszyk.lubel2.17, na.rm=TRUE)
+
+koszyk.lubel2.18<-koszyk.lubel2[koszyk.lubel2$Rok=="2018",]
+vec.koszyk.lubel2.18<-c(koszyk.lubel2.18$Wartosc)
+vec.koszyk.lubel2.18<-as.numeric(vec.koszyk.lubel2.18)
+mean.koszyk.lubel2.18<-mean(vec.koszyk.lubel2.18, na.rm=TRUE)
+
+koszyk.lubel2.19<-koszyk.lubel2[koszyk.lubel2$Rok=="2019",]
+vec.koszyk.lubel2.19<-c(koszyk.lubel2.19$Wartosc)
+vec.koszyk.lubel2.19<-as.numeric(vec.koszyk.lubel2.19)
+mean.koszyk.lubel2.19<-mean(vec.koszyk.lubel2.19, na.rm=TRUE)
+
+srednia.koszyk.lubel2<-c(mean.koszyk.lubel2.06,mean.koszyk.lubel2.07,mean.koszyk.lubel2.08,mean.koszyk.lubel2.09,
+                         mean.koszyk.lubel2.10,mean.koszyk.lubel2.11,mean.koszyk.lubel2.12,mean.koszyk.lubel2.13,
+                         mean.koszyk.lubel2.14,mean.koszyk.lubel2.15,mean.koszyk.lubel2.16,mean.koszyk.lubel2.17,
+                         mean.koszyk.lubel2.18,mean.koszyk.lubel2.19)
+
+lata<-c(2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019)
+png(file = "koszyk.malopolskie.jpg")
+plot(srednia.koszyk.lubel2,type = "o", col = "red", xlab='', ylab = "",ylim=c(10,25),
+     main = "Średnia cena za zakupy w Małopolskim",xaxt = 'n')
+lablist<-as.vector(c(2006:2019))
+axis(1, at=seq(1, 14, by=1), labels = FALSE)
+text(seq(1, 14, by=1), par("usr")[3] - 0.2, labels = lablist, srt = 45, pos = 1, xpd = TRUE)
+dev.off()
+
+########################################################################################################
+koszyk.lubel22.06<-koszyk.lubel22[koszyk.lubel22$Rok=="2006",]
+vec.koszyk.lubel22.06<-c(koszyk.lubel22.06$Wartosc)
+vec.koszyk.lubel22.06<-as.numeric(vec.koszyk.lubel22.06)
+mean.koszyk.lubel22.06<-mean(vec.koszyk.lubel22.06, na.rm=TRUE)
+
+koszyk.lubel22.07<-koszyk.lubel22[koszyk.lubel22$Rok=="2007",]
+vec.koszyk.lubel22.07<-c(koszyk.lubel22.07$Wartosc)
+vec.koszyk.lubel22.07<-as.numeric(vec.koszyk.lubel22.07)
+mean.koszyk.lubel22.07<-mean(vec.koszyk.lubel22.07, na.rm=TRUE)
+
+koszyk.lubel22.08<-koszyk.lubel22[koszyk.lubel22$Rok=="2008",]
+vec.koszyk.lubel22.08<-c(koszyk.lubel22.08$Wartosc)
+vec.koszyk.lubel22.08<-as.numeric(vec.koszyk.lubel22.08)
+mean.koszyk.lubel22.08<-mean(vec.koszyk.lubel22.08, na.rm=TRUE)
+
+koszyk.lubel22.09<-koszyk.lubel22[koszyk.lubel22$Rok=="2009",]
+vec.koszyk.lubel22.09<-c(koszyk.lubel22.09$Wartosc)
+vec.koszyk.lubel22.09<-as.numeric(vec.koszyk.lubel22.09)
+mean.koszyk.lubel22.09<-mean(vec.koszyk.lubel22.09, na.rm=TRUE)
+
+koszyk.lubel22.10<-koszyk.lubel22[koszyk.lubel22$Rok=="2010",]
+vec.koszyk.lubel22.10<-c(koszyk.lubel22.10$Wartosc)
+vec.koszyk.lubel22.10<-as.numeric(vec.koszyk.lubel22.10)
+mean.koszyk.lubel22.10<-mean(vec.koszyk.lubel22.10, na.rm=TRUE)
+
+koszyk.lubel22.11<-koszyk.lubel22[koszyk.lubel22$Rok=="2011",]
+vec.koszyk.lubel22.11<-c(koszyk.lubel22.11$Wartosc)
+vec.koszyk.lubel22.11<-as.numeric(vec.koszyk.lubel22.11)
+mean.koszyk.lubel22.11<-mean(vec.koszyk.lubel22.11, na.rm=TRUE)
+
+koszyk.lubel22.12<-koszyk.lubel22[koszyk.lubel22$Rok=="2012",]
+vec.koszyk.lubel22.12<-c(koszyk.lubel22.12$Wartosc)
+vec.koszyk.lubel22.12<-as.numeric(vec.koszyk.lubel22.12)
+mean.koszyk.lubel22.12<-mean(vec.koszyk.lubel22.12, na.rm=TRUE)
+
+koszyk.lubel22.13<-koszyk.lubel22[koszyk.lubel22$Rok=="2013",]
+vec.koszyk.lubel22.13<-c(koszyk.lubel22.13$Wartosc)
+vec.koszyk.lubel22.13<-as.numeric(vec.koszyk.lubel22.13)
+mean.koszyk.lubel22.13<-mean(vec.koszyk.lubel22.13, na.rm=TRUE)
+
+koszyk.lubel22.14<-koszyk.lubel22[koszyk.lubel22$Rok=="2014",]
+vec.koszyk.lubel22.14<-c(koszyk.lubel22.14$Wartosc)
+vec.koszyk.lubel22.14<-as.numeric(vec.koszyk.lubel22.14)
+mean.koszyk.lubel22.14<-mean(vec.koszyk.lubel22.14, na.rm=TRUE)
+
+koszyk.lubel22.15<-koszyk.lubel22[koszyk.lubel22$Rok=="2015",]
+vec.koszyk.lubel22.15<-c(koszyk.lubel22.15$Wartosc)
+vec.koszyk.lubel22.15<-as.numeric(vec.koszyk.lubel22.15)
+mean.koszyk.lubel22.15<-mean(vec.koszyk.lubel22.15, na.rm=TRUE)
+
+koszyk.lubel22.16<-koszyk.lubel22[koszyk.lubel22$Rok=="2016",]
+vec.koszyk.lubel22.16<-c(koszyk.lubel22.16$Wartosc)
+vec.koszyk.lubel22.16<-as.numeric(vec.koszyk.lubel22.16)
+mean.koszyk.lubel22.16<-mean(vec.koszyk.lubel22.16, na.rm=TRUE)
+
+koszyk.lubel22.17<-koszyk.lubel22[koszyk.lubel22$Rok=="2017",]
+vec.koszyk.lubel22.17<-c(koszyk.lubel22.17$Wartosc)
+vec.koszyk.lubel22.17<-as.numeric(vec.koszyk.lubel22.17)
+mean.koszyk.lubel22.17<-mean(vec.koszyk.lubel22.17, na.rm=TRUE)
+
+koszyk.lubel22.18<-koszyk.lubel22[koszyk.lubel22$Rok=="2018",]
+vec.koszyk.lubel22.18<-c(koszyk.lubel22.18$Wartosc)
+vec.koszyk.lubel22.18<-as.numeric(vec.koszyk.lubel22.18)
+mean.koszyk.lubel22.18<-mean(vec.koszyk.lubel22.18, na.rm=TRUE)
+
+koszyk.lubel22.19<-koszyk.lubel22[koszyk.lubel22$Rok=="2019",]
+vec.koszyk.lubel22.19<-c(koszyk.lubel22.19$Wartosc)
+vec.koszyk.lubel22.19<-as.numeric(vec.koszyk.lubel22.19)
+mean.koszyk.lubel22.19<-mean(vec.koszyk.lubel22.19, na.rm=TRUE)
+
+srednia.koszyk.lubel22<-c(mean.koszyk.lubel22.06,mean.koszyk.lubel22.07,mean.koszyk.lubel22.08,mean.koszyk.lubel22.09,
+                          mean.koszyk.lubel22.10,mean.koszyk.lubel22.11,mean.koszyk.lubel22.12,mean.koszyk.lubel22.13,
+                          mean.koszyk.lubel22.14,mean.koszyk.lubel22.15,mean.koszyk.lubel22.16,mean.koszyk.lubel22.17,
+                          mean.koszyk.lubel22.18,mean.koszyk.lubel22.19)
+
+lata<-c(2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019)
+png(file = "koszyk.mazowieckie.jpg")
+plot(srednia.koszyk.lubel22,type = "o", col = "red", xlab='', ylab = "",ylim=c(10,25),
+     main = "Średnia cena za zakupy w Mazowieckim",xaxt = 'n')
+lablist<-as.vector(c(2006:2019))
+axis(1, at=seq(1, 14, by=1), labels = FALSE)
+text(seq(1, 14, by=1), par("usr")[3] - 0.2, labels = lablist, srt = 45, pos = 1, xpd = TRUE)
+dev.off()
+
+########################################################################################################
+koszyk.lubel3.06<-koszyk.lubel3[koszyk.lubel3$Rok=="2006",]
+vec.koszyk.lubel3.06<-c(koszyk.lubel3.06$Wartosc)
+vec.koszyk.lubel3.06<-as.numeric(vec.koszyk.lubel3.06)
+mean.koszyk.lubel3.06<-mean(vec.koszyk.lubel3.06, na.rm=TRUE)
+
+koszyk.lubel3.07<-koszyk.lubel3[koszyk.lubel3$Rok=="2007",]
+vec.koszyk.lubel3.07<-c(koszyk.lubel3.07$Wartosc)
+vec.koszyk.lubel3.07<-as.numeric(vec.koszyk.lubel3.07)
+mean.koszyk.lubel3.07<-mean(vec.koszyk.lubel3.07, na.rm=TRUE)
+
+koszyk.lubel3.08<-koszyk.lubel3[koszyk.lubel3$Rok=="2008",]
+vec.koszyk.lubel3.08<-c(koszyk.lubel3.08$Wartosc)
+vec.koszyk.lubel3.08<-as.numeric(vec.koszyk.lubel3.08)
+mean.koszyk.lubel3.08<-mean(vec.koszyk.lubel3.08, na.rm=TRUE)
+
+koszyk.lubel3.09<-koszyk.lubel3[koszyk.lubel3$Rok=="2009",]
+vec.koszyk.lubel3.09<-c(koszyk.lubel3.09$Wartosc)
+vec.koszyk.lubel3.09<-as.numeric(vec.koszyk.lubel3.09)
+mean.koszyk.lubel3.09<-mean(vec.koszyk.lubel3.09, na.rm=TRUE)
+
+koszyk.lubel3.10<-koszyk.lubel3[koszyk.lubel3$Rok=="2010",]
+vec.koszyk.lubel3.10<-c(koszyk.lubel3.10$Wartosc)
+vec.koszyk.lubel3.10<-as.numeric(vec.koszyk.lubel3.10)
+mean.koszyk.lubel3.10<-mean(vec.koszyk.lubel3.10, na.rm=TRUE)
+
+koszyk.lubel3.11<-koszyk.lubel[koszyk.lubel3$Rok=="2011",]
+vec.koszyk.lubel3.11<-c(koszyk.lubel3.11$Wartosc)
+vec.koszyk.lubel3.11<-as.numeric(vec.koszyk.lubel3.11)
+mean.koszyk.lubel3.11<-mean(vec.koszyk.lubel3.11, na.rm=TRUE)
+
+koszyk.lubel3.12<-koszyk.lubel[koszyk.lubel3$Rok=="2012",]
+vec.koszyk.lubel3.12<-c(koszyk.lubel3.12$Wartosc)
+vec.koszyk.lubel3.12<-as.numeric(vec.koszyk.lubel3.12)
+mean.koszyk.lubel3.12<-mean(vec.koszyk.lubel3.12, na.rm=TRUE)
+
+koszyk.lubel3.13<-koszyk.lubel3[koszyk.lubel3$Rok=="2013",]
+vec.koszyk.lubel3.13<-c(koszyk.lubel3.13$Wartosc)
+vec.koszyk.lubel3.13<-as.numeric(vec.koszyk.lubel3.13)
+mean.koszyk.lubel3.13<-mean(vec.koszyk.lubel3.13, na.rm=TRUE)
+
+koszyk.lubel3.14<-koszyk.lubel3[koszyk.lubel3$Rok=="2014",]
+vec.koszyk.lubel3.14<-c(koszyk.lubel3.14$Wartosc)
+vec.koszyk.lubel3.14<-as.numeric(vec.koszyk.lubel3.14)
+mean.koszyk.lubel3.14<-mean(vec.koszyk.lubel3.14, na.rm=TRUE)
+
+koszyk.lubel3.15<-koszyk.lubel3[koszyk.lubel3$Rok=="2015",]
+vec.koszyk.lubel3.15<-c(koszyk.lubel3.15$Wartosc)
+vec.koszyk.lubel3.15<-as.numeric(vec.koszyk.lubel3.15)
+mean.koszyk.lubel3.15<-mean(vec.koszyk.lubel3.15, na.rm=TRUE)
+
+koszyk.lubel3.16<-koszyk.lubel3[koszyk.lubel3$Rok=="2016",]
+vec.koszyk.lubel3.16<-c(koszyk.lubel3.16$Wartosc)
+vec.koszyk.lubel3.16<-as.numeric(vec.koszyk.lubel3.16)
+mean.koszyk.lubel3.16<-mean(vec.koszyk.lubel3.16, na.rm=TRUE)
+
+koszyk.lubel3.17<-koszyk.lubel3[koszyk.lubel3$Rok=="2017",]
+vec.koszyk.lubel3.17<-c(koszyk.lubel3.17$Wartosc)
+vec.koszyk.lubel3.17<-as.numeric(vec.koszyk.lubel3.17)
+mean.koszyk.lubel3.17<-mean(vec.koszyk.lubel3.17, na.rm=TRUE)
+
+koszyk.lubel3.18<-koszyk.lubel3[koszyk.lubel3$Rok=="2018",]
+vec.koszyk.lubel3.18<-c(koszyk.lubel3.18$Wartosc)
+vec.koszyk.lubel3.18<-as.numeric(vec.koszyk.lubel3.18)
+mean.koszyk.lubel3.18<-mean(vec.koszyk.lubel3.18, na.rm=TRUE)
+
+koszyk.lubel3.19<-koszyk.lubel3[koszyk.lubel3$Rok=="2019",]
+vec.koszyk.lubel3.19<-c(koszyk.lubel3.19$Wartosc)
+vec.koszyk.lubel3.19<-as.numeric(vec.koszyk.lubel3.19)
+mean.koszyk.lubel3.19<-mean(vec.koszyk.lubel3.19, na.rm=TRUE)
+
+srednia.koszyk.lubel3<-c(mean.koszyk.lubel3.06,mean.koszyk.lubel3.07,mean.koszyk.lubel3.08,mean.koszyk.lubel3.09,
+                         mean.koszyk.lubel3.10,mean.koszyk.lubel3.11,mean.koszyk.lubel3.12,mean.koszyk.lubel3.13,
+                         mean.koszyk.lubel3.14,mean.koszyk.lubel3.15,mean.koszyk.lubel3.16,mean.koszyk.lubel3.17,
+                         mean.koszyk.lubel3.18,mean.koszyk.lubel3.19)
+
+lata<-c(2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019)
+png(file = "koszyk.opolskie.jpg")
+plot(srednia.koszyk.lubel3,type = "o", col = "red", xlab='', ylab = "",ylim=c(10,25),
+     main = "Średnia cena za zakupy w Opolskim",xaxt = 'n')
+lablist<-as.vector(c(2006:2019))
+axis(1, at=seq(1, 14, by=1), labels = FALSE)
+text(seq(1, 14, by=1), par("usr")[3] - 0.2, labels = lablist, srt = 45, pos = 1, xpd = TRUE)
+dev.off()
+
+########################################################################################################
+koszyk.lubel33.06<-koszyk.lubel33[koszyk.lubel33$Rok=="2006",]
+vec.koszyk.lubel33.06<-c(koszyk.lubel33.06$Wartosc)
+vec.koszyk.lubel33.06<-as.numeric(vec.koszyk.lubel33.06)
+mean.koszyk.lubel33.06<-mean(vec.koszyk.lubel33.06, na.rm=TRUE)
+
+koszyk.lubel33.07<-koszyk.lubel33[koszyk.lubel33$Rok=="2007",]
+vec.koszyk.lubel33.07<-c(koszyk.lubel33.07$Wartosc)
+vec.koszyk.lubel33.07<-as.numeric(vec.koszyk.lubel33.07)
+mean.koszyk.lubel33.07<-mean(vec.koszyk.lubel33.07, na.rm=TRUE)
+
+
+koszyk.lubel33.08<-koszyk.lubel33[koszyk.lubel33$Rok=="2008",]
+vec.koszyk.lubel33.08<-c(koszyk.lubel33.08$Wartosc)
+vec.koszyk.lubel33.08<-as.numeric(vec.koszyk.lubel33.08)
+mean.koszyk.lubel33.08<-mean(vec.koszyk.lubel33.08, na.rm=TRUE)
+
+koszyk.lubel33.09<-koszyk.lubel33[koszyk.lubel33$Rok=="2009",]
+vec.koszyk.lubel33.09<-c(koszyk.lubel33.09$Wartosc)
+vec.koszyk.lubel33.09<-as.numeric(vec.koszyk.lubel33.09)
+mean.koszyk.lubel33.09<-mean(vec.koszyk.lubel33.09, na.rm=TRUE)
+
+koszyk.lubel33.10<-koszyk.lubel33[koszyk.lubel33$Rok=="2010",]
+vec.koszyk.lubel33.10<-c(koszyk.lubel33.10$Wartosc)
+vec.koszyk.lubel33.10<-as.numeric(vec.koszyk.lubel33.10)
+mean.koszyk.lubel33.10<-mean(vec.koszyk.lubel33.10, na.rm=TRUE)
+
+koszyk.lubel33.11<-koszyk.lubel33[koszyk.lubel33$Rok=="2011",]
+vec.koszyk.lubel33.11<-c(koszyk.lubel33.11$Wartosc)
+vec.koszyk.lubel33.11<-as.numeric(vec.koszyk.lubel33.11)
+mean.koszyk.lubel33.11<-mean(vec.koszyk.lubel33.11, na.rm=TRUE)
+
+koszyk.lubel33.12<-koszyk.lubel33[koszyk.lubel33$Rok=="2012",]
+vec.koszyk.lubel33.12<-c(koszyk.lubel33.12$Wartosc)
+vec.koszyk.lubel33.12<-as.numeric(vec.koszyk.lubel33.12)
+mean.koszyk.lubel33.12<-mean(vec.koszyk.lubel33.12, na.rm=TRUE)
+
+koszyk.lubel33.13<-koszyk.lubel33[koszyk.lubel33$Rok=="2013",]
+vec.koszyk.lubel33.13<-c(koszyk.lubel33.13$Wartosc)
+vec.koszyk.lubel33.13<-as.numeric(vec.koszyk.lubel33.13)
+mean.koszyk.lubel33.13<-mean(vec.koszyk.lubel33.13, na.rm=TRUE)
+
+koszyk.lubel33.14<-koszyk.lubel33[koszyk.lubel33$Rok=="2014",]
+vec.koszyk.lubel33.14<-c(koszyk.lubel33.14$Wartosc)
+vec.koszyk.lubel33.14<-as.numeric(vec.koszyk.lubel33.14)
+mean.koszyk.lubel33.14<-mean(vec.koszyk.lubel33.14, na.rm=TRUE)
+
+koszyk.lubel33.15<-koszyk.lubel33[koszyk.lubel33$Rok=="2015",]
+vec.koszyk.lubel33.15<-c(koszyk.lubel33.15$Wartosc)
+vec.koszyk.lubel33.15<-as.numeric(vec.koszyk.lubel33.15)
+mean.koszyk.lubel33.15<-mean(vec.koszyk.lubel33.15, na.rm=TRUE)
+
+koszyk.lubel33.16<-koszyk.lubel33[koszyk.lubel33$Rok=="2016",]
+vec.koszyk.lubel33.16<-c(koszyk.lubel33.16$Wartosc)
+vec.koszyk.lubel33.16<-as.numeric(vec.koszyk.lubel33.16)
+mean.koszyk.lubel33.16<-mean(vec.koszyk.lubel33.16, na.rm=TRUE)
+
+koszyk.lubel33.17<-koszyk.lubel33[koszyk.lubel33$Rok=="2017",]
+vec.koszyk.lubel33.17<-c(koszyk.lubel33.17$Wartosc)
+vec.koszyk.lubel33.17<-as.numeric(vec.koszyk.lubel33.17)
+mean.koszyk.lubel33.17<-mean(vec.koszyk.lubel33.17, na.rm=TRUE)
+
+koszyk.lubel33.18<-koszyk.lubel33[koszyk.lubel33$Rok=="2018",]
+vec.koszyk.lubel33.18<-c(koszyk.lubel33.18$Wartosc)
+vec.koszyk.lubel33.18<-as.numeric(vec.koszyk.lubel33.18)
+mean.koszyk.lubel33.18<-mean(vec.koszyk.lubel33.18, na.rm=TRUE)
+
+koszyk.lubel33.19<-koszyk.lubel33[koszyk.lubel33$Rok=="2019",]
+vec.koszyk.lubel33.19<-c(koszyk.lubel33.19$Wartosc)
+vec.koszyk.lubel33.19<-as.numeric(vec.koszyk.lubel33.19)
+mean.koszyk.lubel33.19<-mean(vec.koszyk.lubel33.19, na.rm=TRUE)
+
+srednia.koszyk.lubel33<-c(mean.koszyk.lubel33.06,mean.koszyk.lubel33.07,mean.koszyk.lubel33.08,mean.koszyk.lubel33.09,
+                          mean.koszyk.lubel33.10,mean.koszyk.lubel33.11,mean.koszyk.lubel33.12,mean.koszyk.lubel33.13,
+                          mean.koszyk.lubel33.14,mean.koszyk.lubel33.15,mean.koszyk.lubel33.16,mean.koszyk.lubel33.17,
+                          mean.koszyk.lubel33.18,mean.koszyk.lubel33.19)
+
+lata<-c(2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019)
+png(file = "koszyk.podlaskie.jpg")
+plot(srednia.koszyk.lubel33,type = "o", col = "red", xlab='', ylab = "",ylim=c(10,25),
+     main = "Średnia cena za zakupy w Podlaskim",xaxt = 'n')
+lablist<-as.vector(c(2006:2019))
+axis(1, at=seq(1, 14, by=1), labels = FALSE)
+text(seq(1, 14, by=1), par("usr")[3] - 0.2, labels = lablist, srt = 45, pos = 1, xpd = TRUE)
+dev.off()
+
+########################################################################################################
+koszyk.lubel4.06<-koszyk.lubel4[koszyk.lubel4$Rok=="2006",]
+vec.koszyk.lubel4.06<-c(koszyk.lubel4.06$Wartosc)
+vec.koszyk.lubel4.06<-as.numeric(vec.koszyk.lubel4.06)
+mean.koszyk.lubel4.06<-mean(vec.koszyk.lubel4.06, na.rm=TRUE)
+
+koszyk.lubel4.07<-koszyk.lubel4[koszyk.lubel4$Rok=="2007",]
+vec.koszyk.lubel4.07<-c(koszyk.lubel4.07$Wartosc)
+vec.koszyk.lubel4.07<-as.numeric(vec.koszyk.lubel4.07)
+mean.koszyk.lubel4.07<-mean(vec.koszyk.lubel4.07, na.rm=TRUE)
+
+
+koszyk.lubel4.08<-koszyk.lubel4[koszyk.lubel4$Rok=="2008",]
+vec.koszyk.lubel4.08<-c(koszyk.lubel4.08$Wartosc)
+vec.koszyk.lubel4.08<-as.numeric(vec.koszyk.lubel4.08)
+mean.koszyk.lubel4.08<-mean(vec.koszyk.lubel4.08, na.rm=TRUE)
+
+koszyk.lubel4.09<-koszyk.lubel4[koszyk.lubel4$Rok=="2009",]
+vec.koszyk.lubel4.09<-c(koszyk.lubel4.09$Wartosc)
+vec.koszyk.lubel4.09<-as.numeric(vec.koszyk.lubel4.09)
+mean.koszyk.lubel4.09<-mean(vec.koszyk.lubel4.09, na.rm=TRUE)
+
+koszyk.lubel4.10<-koszyk.lubel4[koszyk.lubel4$Rok=="2010",]
+vec.koszyk.lubel4.10<-c(koszyk.lubel4.10$Wartosc)
+vec.koszyk.lubel4.10<-as.numeric(vec.koszyk.lubel4.10)
+mean.koszyk.lubel4.10<-mean(vec.koszyk.lubel4.10, na.rm=TRUE)
+
+koszyk.lubel4.11<-koszyk.lubel4[koszyk.lubel4$Rok=="2011",]
+vec.koszyk.lubel4.11<-c(koszyk.lubel4.11$Wartosc)
+vec.koszyk.lubel4.11<-as.numeric(vec.koszyk.lubel4.11)
+mean.koszyk.lubel4.11<-mean(vec.koszyk.lubel4.11, na.rm=TRUE)
+
+koszyk.lubel4.12<-koszyk.lubel4[koszyk.lubel4$Rok=="2012",]
+vec.koszyk.lubel4.12<-c(koszyk.lubel4.12$Wartosc)
+vec.koszyk.lubel4.12<-as.numeric(vec.koszyk.lubel4.12)
+mean.koszyk.lubel4.12<-mean(vec.koszyk.lubel4.12, na.rm=TRUE)
+
+koszyk.lubel4.13<-koszyk.lubel4[koszyk.lubel4$Rok=="2013",]
+vec.koszyk.lubel4.13<-c(koszyk.lubel4.13$Wartosc)
+vec.koszyk.lubel4.13<-as.numeric(vec.koszyk.lubel4.13)
+mean.koszyk.lubel4.13<-mean(vec.koszyk.lubel4.13, na.rm=TRUE)
+
+koszyk.lubel4.14<-koszyk.lubel4[koszyk.lubel4$Rok=="2014",]
+vec.koszyk.lubel4.14<-c(koszyk.lubel4.14$Wartosc)
+vec.koszyk.lubel4.14<-as.numeric(vec.koszyk.lubel4.14)
+mean.koszyk.lubel4.14<-mean(vec.koszyk.lubel4.14, na.rm=TRUE)
+
+koszyk.lubel4.15<-koszyk.lubel4[koszyk.lubel4$Rok=="2015",]
+vec.koszyk.lubel4.15<-c(koszyk.lubel4.15$Wartosc)
+vec.koszyk.lubel4.15<-as.numeric(vec.koszyk.lubel4.15)
+mean.koszyk.lubel4.15<-mean(vec.koszyk.lubel4.15, na.rm=TRUE)
+
+koszyk.lubel4.16<-koszyk.lubel4[koszyk.lubel4$Rok=="2016",]
+vec.koszyk.lubel4.16<-c(koszyk.lubel4.16$Wartosc)
+vec.koszyk.lubel4.16<-as.numeric(vec.koszyk.lubel4.16)
+mean.koszyk.lubel4.16<-mean(vec.koszyk.lubel4.16, na.rm=TRUE)
+
+koszyk.lubel4.17<-koszyk.lubel4[koszyk.lubel4$Rok=="2017",]
+vec.koszyk.lubel4.17<-c(koszyk.lubel4.17$Wartosc)
+vec.koszyk.lubel4.17<-as.numeric(vec.koszyk.lubel4.17)
+mean.koszyk.lubel4.17<-mean(vec.koszyk.lubel4.17, na.rm=TRUE)
+
+koszyk.lubel4.18<-koszyk.lubel4[koszyk.lubel4$Rok=="2018",]
+vec.koszyk.lubel4.18<-c(koszyk.lubel4.18$Wartosc)
+vec.koszyk.lubel4.18<-as.numeric(vec.koszyk.lubel4.18)
+mean.koszyk.lubel4.18<-mean(vec.koszyk.lubel4.18, na.rm=TRUE)
+
+koszyk.lubel4.19<-koszyk.lubel4[koszyk.lubel4$Rok=="2019",]
+vec.koszyk.lubel4.19<-c(koszyk.lubel4.19$Wartosc)
+vec.koszyk.lubel4.19<-as.numeric(vec.koszyk.lubel4.19)
+mean.koszyk.lubel4.19<-mean(vec.koszyk.lubel4.19, na.rm=TRUE)
+
+srednia.koszyk.lubel4<-c(mean.koszyk.lubel4.06,mean.koszyk.lubel4.07,mean.koszyk.lubel4.08,mean.koszyk.lubel4.09,
+                         mean.koszyk.lubel4.10,mean.koszyk.lubel4.11,mean.koszyk.lubel4.12,mean.koszyk.lubel4.13,
+                         mean.koszyk.lubel4.14,mean.koszyk.lubel4.15,mean.koszyk.lubel4.16,mean.koszyk.lubel4.17,
+                         mean.koszyk.lubel4.18,mean.koszyk.lubel4.19)
+
+lata<-c(2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019)
+png(file = "koszyk.pomorskie.jpg")
+plot(srednia.koszyk.lubel4,type = "o", col = "red", xlab='', ylab = "",ylim=c(10,25),
+     main = "Średnia cena za zakupy w Pomorskim",xaxt = 'n')
+lablist<-as.vector(c(2006:2019))
+axis(1, at=seq(1, 14, by=1), labels = FALSE)
+text(seq(1, 14, by=1), par("usr")[3] - 0.2, labels = lablist, srt = 45, pos = 1, xpd = TRUE)
+dev.off()
+
+########################################################################################################
+koszyk.lubel44.06<-koszyk.lubel44[koszyk.lubel44$Rok=="2006",]
+vec.koszyk.lubel44.06<-c(koszyk.lubel44.06$Wartosc)
+vec.koszyk.lubel44.06<-as.numeric(vec.koszyk.lubel44.06)
+mean.koszyk.lubel44.06<-mean(vec.koszyk.lubel44.06, na.rm=TRUE)
+
+koszyk.lubel44.07<-koszyk.lubel44[koszyk.lubel44$Rok=="2007",]
+vec.koszyk.lubel44.07<-c(koszyk.lubel44.07$Wartosc)
+vec.koszyk.lubel44.07<-as.numeric(vec.koszyk.lubel44.07)
+mean.koszyk.lubel44.07<-mean(vec.koszyk.lubel44.07, na.rm=TRUE)
+
+
+koszyk.lubel44.08<-koszyk.lubel44[koszyk.lubel44$Rok=="2008",]
+vec.koszyk.lubel44.08<-c(koszyk.lubel44.08$Wartosc)
+vec.koszyk.lubel44.08<-as.numeric(vec.koszyk.lubel44.08)
+mean.koszyk.lubel44.08<-mean(vec.koszyk.lubel44.08, na.rm=TRUE)
+
+koszyk.lubel44.09<-koszyk.lubel44[koszyk.lubel44$Rok=="2009",]
+vec.koszyk.lubel44.09<-c(koszyk.lubel44.09$Wartosc)
+vec.koszyk.lubel44.09<-as.numeric(vec.koszyk.lubel44.09)
+mean.koszyk.lubel44.09<-mean(vec.koszyk.lubel44.09, na.rm=TRUE)
+
+koszyk.lubel44.10<-koszyk.lubel44[koszyk.lubel44$Rok=="2010",]
+vec.koszyk.lubel44.10<-c(koszyk.lubel44.10$Wartosc)
+vec.koszyk.lubel44.10<-as.numeric(vec.koszyk.lubel44.10)
+mean.koszyk.lubel44.10<-mean(vec.koszyk.lubel44.10, na.rm=TRUE)
+
+koszyk.lubel44.11<-koszyk.lubel44[koszyk.lubel44$Rok=="2011",]
+vec.koszyk.lubel44.11<-c(koszyk.lubel44.11$Wartosc)
+vec.koszyk.lubel44.11<-as.numeric(vec.koszyk.lubel44.11)
+mean.koszyk.lubel44.11<-mean(vec.koszyk.lubel44.11, na.rm=TRUE)
+
+koszyk.lubel44.12<-koszyk.lubel44[koszyk.lubel44$Rok=="2012",]
+vec.koszyk.lubel44.12<-c(koszyk.lubel44.12$Wartosc)
+vec.koszyk.lubel44.12<-as.numeric(vec.koszyk.lubel44.12)
+mean.koszyk.lubel44.12<-mean(vec.koszyk.lubel44.12, na.rm=TRUE)
+
+koszyk.lubel44.13<-koszyk.lubel44[koszyk.lubel44$Rok=="2013",]
+vec.koszyk.lubel44.13<-c(koszyk.lubel44.13$Wartosc)
+vec.koszyk.lubel44.13<-as.numeric(vec.koszyk.lubel44.13)
+mean.koszyk.lubel44.13<-mean(vec.koszyk.lubel44.13, na.rm=TRUE)
+
+koszyk.lubel44.14<-koszyk.lubel44[koszyk.lubel44$Rok=="2014",]
+vec.koszyk.lubel44.14<-c(koszyk.lubel44.14$Wartosc)
+vec.koszyk.lubel44.14<-as.numeric(vec.koszyk.lubel44.14)
+mean.koszyk.lubel44.14<-mean(vec.koszyk.lubel44.14, na.rm=TRUE)
+
+koszyk.lubel44.15<-koszyk.lubel44[koszyk.lubel44$Rok=="2015",]
+vec.koszyk.lubel44.15<-c(koszyk.lubel44.15$Wartosc)
+vec.koszyk.lubel44.15<-as.numeric(vec.koszyk.lubel44.15)
+mean.koszyk.lubel44.15<-mean(vec.koszyk.lubel44.15, na.rm=TRUE)
+
+koszyk.lubel44.16<-koszyk.lubel44[koszyk.lubel44$Rok=="2016",]
+vec.koszyk.lubel44.16<-c(koszyk.lubel44.16$Wartosc)
+vec.koszyk.lubel44.16<-as.numeric(vec.koszyk.lubel44.16)
+mean.koszyk.lubel44.16<-mean(vec.koszyk.lubel44.16, na.rm=TRUE)
+
+koszyk.lubel44.17<-koszyk.lubel44[koszyk.lubel44$Rok=="2017",]
+vec.koszyk.lubel44.17<-c(koszyk.lubel44.17$Wartosc)
+vec.koszyk.lubel44.17<-as.numeric(vec.koszyk.lubel44.17)
+mean.koszyk.lubel44.17<-mean(vec.koszyk.lubel44.17, na.rm=TRUE)
+
+koszyk.lubel44.18<-koszyk.lubel44[koszyk.lubel44$Rok=="2018",]
+vec.koszyk.lubel44.18<-c(koszyk.lubel44.18$Wartosc)
+vec.koszyk.lubel44.18<-as.numeric(vec.koszyk.lubel44.18)
+mean.koszyk.lubel44.18<-mean(vec.koszyk.lubel44.18, na.rm=TRUE)
+
+koszyk.lubel44.19<-koszyk.lubel44[koszyk.lubel44$Rok=="2019",]
+vec.koszyk.lubel44.19<-c(koszyk.lubel44.19$Wartosc)
+vec.koszyk.lubel44.19<-as.numeric(vec.koszyk.lubel44.19)
+mean.koszyk.lubel44.19<-mean(vec.koszyk.lubel44.19, na.rm=TRUE)
+
+srednia.koszyk.lubel44<-c(mean.koszyk.lubel44.06,mean.koszyk.lubel44.07,mean.koszyk.lubel44.08,mean.koszyk.lubel44.09,
+                          mean.koszyk.lubel44.10,mean.koszyk.lubel44.11,mean.koszyk.lubel44.12,mean.koszyk.lubel44.13,
+                          mean.koszyk.lubel44.14,mean.koszyk.lubel44.15,mean.koszyk.lubel44.16,mean.koszyk.lubel44.17,
+                          mean.koszyk.lubel44.18,mean.koszyk.lubel44.19)
+
+lata<-c(2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019)
+png(file = "koszyk.slaskie.jpg")
+plot(srednia.koszyk.lubel44,type = "o", col = "red", xlab='', ylab = "",ylim=c(10,25),
+     main = "Średnia cena za zakupy w Śląskim",xaxt = 'n')
+lablist<-as.vector(c(2006:2019))
+axis(1, at=seq(1, 14, by=1), labels = FALSE)
+text(seq(1, 14, by=1), par("usr")[3] - 0.2, labels = lablist, srt = 45, pos = 1, xpd = TRUE)
+dev.off()
+
+########################################################################################################
+koszyk.lubel5.06<-koszyk.lubel5[koszyk.lubel5$Rok=="2006",]
+vec.koszyk.lubel5.06<-c(koszyk.lubel5.06$Wartosc)
+vec.koszyk.lubel5.06<-as.numeric(vec.koszyk.lubel5.06)
+mean.koszyk.lubel5.06<-mean(vec.koszyk.lubel5.06, na.rm=TRUE)
+
+koszyk.lubel5.07<-koszyk.lubel5[koszyk.lubel5$Rok=="2007",]
+vec.koszyk.lubel5.07<-c(koszyk.lubel5.07$Wartosc)
+vec.koszyk.lubel5.07<-as.numeric(vec.koszyk.lubel5.07)
+mean.koszyk.lubel5.07<-mean(vec.koszyk.lubel5.07, na.rm=TRUE)
+
+
+koszyk.lubel5.08<-koszyk.lubel5[koszyk.lubel5$Rok=="2008",]
+vec.koszyk.lubel5.08<-c(koszyk.lubel5.08$Wartosc)
+vec.koszyk.lubel5.08<-as.numeric(vec.koszyk.lubel5.08)
+mean.koszyk.lubel5.08<-mean(vec.koszyk.lubel5.08, na.rm=TRUE)
+
+koszyk.lubel5.09<-koszyk.lubel5[koszyk.lubel5$Rok=="2009",]
+vec.koszyk.lubel5.09<-c(koszyk.lubel5.09$Wartosc)
+vec.koszyk.lubel5.09<-as.numeric(vec.koszyk.lubel5.09)
+mean.koszyk.lubel5.09<-mean(vec.koszyk.lubel5.09, na.rm=TRUE)
+
+koszyk.lubel5.10<-koszyk.lubel5[koszyk.lubel5$Rok=="2010",]
+vec.koszyk.lubel5.10<-c(koszyk.lubel5.10$Wartosc)
+vec.koszyk.lubel5.10<-as.numeric(vec.koszyk.lubel5.10)
+mean.koszyk.lubel5.10<-mean(vec.koszyk.lubel5.10, na.rm=TRUE)
+
+koszyk.lubel5.11<-koszyk.lubel5[koszyk.lubel5$Rok=="2011",]
+vec.koszyk.lubel5.11<-c(koszyk.lubel5.11$Wartosc)
+vec.koszyk.lubel5.11<-as.numeric(vec.koszyk.lubel5.11)
+mean.koszyk.lubel5.11<-mean(vec.koszyk.lubel5.11, na.rm=TRUE)
+
+koszyk.lubel5.12<-koszyk.lubel5[koszyk.lubel5$Rok=="2012",]
+vec.koszyk.lubel5.12<-c(koszyk.lubel5.12$Wartosc)
+vec.koszyk.lubel5.12<-as.numeric(vec.koszyk.lubel5.12)
+mean.koszyk.lubel5.12<-mean(vec.koszyk.lubel5.12, na.rm=TRUE)
+
+koszyk.lubel5.13<-koszyk.lubel5[koszyk.lubel5$Rok=="2013",]
+vec.koszyk.lubel5.13<-c(koszyk.lubel5.13$Wartosc)
+vec.koszyk.lubel5.13<-as.numeric(vec.koszyk.lubel5.13)
+mean.koszyk.lubel5.13<-mean(vec.koszyk.lubel5.13, na.rm=TRUE)
+
+koszyk.lubel5.14<-koszyk.lubel5[koszyk.lubel5$Rok=="2014",]
+vec.koszyk.lubel5.14<-c(koszyk.lubel5.14$Wartosc)
+vec.koszyk.lubel5.14<-as.numeric(vec.koszyk.lubel5.14)
+mean.koszyk.lubel5.14<-mean(vec.koszyk.lubel5.14, na.rm=TRUE)
+
+koszyk.lubel5.15<-koszyk.lubel5[koszyk.lubel5$Rok=="2015",]
+vec.koszyk.lubel5.15<-c(koszyk.lubel5.15$Wartosc)
+vec.koszyk.lubel5.15<-as.numeric(vec.koszyk.lubel5.15)
+mean.koszyk.lubel5.15<-mean(vec.koszyk.lubel5.15, na.rm=TRUE)
+
+koszyk.lubel5.16<-koszyk.lubel5[koszyk.lubel5$Rok=="2016",]
+vec.koszyk.lubel5.16<-c(koszyk.lubel5.16$Wartosc)
+vec.koszyk.lubel5.16<-as.numeric(vec.koszyk.lubel5.16)
+mean.koszyk.lubel5.16<-mean(vec.koszyk.lubel5.16, na.rm=TRUE)
+
+koszyk.lubel5.17<-koszyk.lubel5[koszyk.lubel5$Rok=="2017",]
+vec.koszyk.lubel5.17<-c(koszyk.lubel5.17$Wartosc)
+vec.koszyk.lubel5.17<-as.numeric(vec.koszyk.lubel5.17)
+mean.koszyk.lubel5.17<-mean(vec.koszyk.lubel5.17, na.rm=TRUE)
+
+koszyk.lubel5.18<-koszyk.lubel5[koszyk.lubel5$Rok=="2018",]
+vec.koszyk.lubel5.18<-c(koszyk.lubel5.18$Wartosc)
+vec.koszyk.lubel5.18<-as.numeric(vec.koszyk.lubel5.18)
+mean.koszyk.lubel5.18<-mean(vec.koszyk.lubel5.18, na.rm=TRUE)
+
+koszyk.lubel5.19<-koszyk.lubel5[koszyk.lubel5$Rok=="2019",]
+vec.koszyk.lubel5.19<-c(koszyk.lubel5.19$Wartosc)
+vec.koszyk.lubel5.19<-as.numeric(vec.koszyk.lubel5.19)
+mean.koszyk.lubel5.19<-mean(vec.koszyk.lubel5.19, na.rm=TRUE)
+
+srednia.koszyk.lubel5<-c(mean.koszyk.lubel5.06,mean.koszyk.lubel5.07,mean.koszyk.lubel5.08,mean.koszyk.lubel5.09,
+                         mean.koszyk.lubel5.10,mean.koszyk.lubel5.11,mean.koszyk.lubel5.12,mean.koszyk.lubel5.13,
+                         mean.koszyk.lubel5.14,mean.koszyk.lubel5.15,mean.koszyk.lubel5.16,mean.koszyk.lubel5.17,
+                         mean.koszyk.lubel5.18,mean.koszyk.lubel5.19)
+
+lata<-c(2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019)
+png(file = "koszyk.swietokrzyskie.jpg")
+plot(srednia.koszyk.lubel5,type = "o", col = "red", xlab='', ylab = "",ylim=c(10,25),
+     main = "Średnia cena za zakupy w Świętokrzyskim",xaxt = 'n')
+lablist<-as.vector(c(2006:2019))
+axis(1, at=seq(1, 14, by=1), labels = FALSE)
+text(seq(1, 14, by=1), par("usr")[3] - 0.2, labels = lablist, srt = 45, pos = 1, xpd = TRUE)
+dev.off()
+
+########################################################################################################
+koszyk.lubel55.06<-koszyk.lubel55[koszyk.lubel55$Rok=="2006",]
+vec.koszyk.lubel55.06<-c(koszyk.lubel55.06$Wartosc)
+vec.koszyk.lubel55.06<-as.numeric(vec.koszyk.lubel55.06)
+mean.koszyk.lubel55.06<-mean(vec.koszyk.lubel55.06, na.rm=TRUE)
+
+koszyk.lubel55.07<-koszyk.lubel55[koszyk.lubel55$Rok=="2007",]
+vec.koszyk.lubel55.07<-c(koszyk.lubel55.07$Wartosc)
+vec.koszyk.lubel55.07<-as.numeric(vec.koszyk.lubel55.07)
+mean.koszyk.lubel55.07<-mean(vec.koszyk.lubel55.07, na.rm=TRUE)
+
+
+koszyk.lubel55.08<-koszyk.lubel55[koszyk.lubel55$Rok=="2008",]
+vec.koszyk.lubel55.08<-c(koszyk.lubel55.08$Wartosc)
+vec.koszyk.lubel55.08<-as.numeric(vec.koszyk.lubel55.08)
+mean.koszyk.lubel55.08<-mean(vec.koszyk.lubel55.08, na.rm=TRUE)
+
+koszyk.lubel55.09<-koszyk.lubel55[koszyk.lubel55$Rok=="2009",]
+vec.koszyk.lubel55.09<-c(koszyk.lubel55.09$Wartosc)
+vec.koszyk.lubel55.09<-as.numeric(vec.koszyk.lubel55.09)
+mean.koszyk.lubel55.09<-mean(vec.koszyk.lubel55.09, na.rm=TRUE)
+
+koszyk.lubel55.10<-koszyk.lubel55[koszyk.lubel55$Rok=="2010",]
+vec.koszyk.lubel55.10<-c(koszyk.lubel55.10$Wartosc)
+vec.koszyk.lubel55.10<-as.numeric(vec.koszyk.lubel55.10)
+mean.koszyk.lubel55.10<-mean(vec.koszyk.lubel55.10, na.rm=TRUE)
+
+koszyk.lubel55.11<-koszyk.lubel55[koszyk.lubel55$Rok=="2011",]
+vec.koszyk.lubel55.11<-c(koszyk.lubel55.11$Wartosc)
+vec.koszyk.lubel55.11<-as.numeric(vec.koszyk.lubel55.11)
+mean.koszyk.lubel55.11<-mean(vec.koszyk.lubel55.11, na.rm=TRUE)
+
+koszyk.lubel55.12<-koszyk.lubel55[koszyk.lubel55$Rok=="2012",]
+vec.koszyk.lubel55.12<-c(koszyk.lubel55.12$Wartosc)
+vec.koszyk.lubel55.12<-as.numeric(vec.koszyk.lubel55.12)
+mean.koszyk.lubel55.12<-mean(vec.koszyk.lubel55.12, na.rm=TRUE)
+
+koszyk.lubel55.13<-koszyk.lubel55[koszyk.lubel55$Rok=="2013",]
+vec.koszyk.lubel55.13<-c(koszyk.lubel55.13$Wartosc)
+vec.koszyk.lubel55.13<-as.numeric(vec.koszyk.lubel55.13)
+mean.koszyk.lubel55.13<-mean(vec.koszyk.lubel55.13, na.rm=TRUE)
+
+koszyk.lubel55.14<-koszyk.lubel55[koszyk.lubel55$Rok=="2014",]
+vec.koszyk.lubel55.14<-c(koszyk.lubel55.14$Wartosc)
+vec.koszyk.lubel55.14<-as.numeric(vec.koszyk.lubel55.14)
+mean.koszyk.lubel55.14<-mean(vec.koszyk.lubel55.14, na.rm=TRUE)
+
+koszyk.lubel55.15<-koszyk.lubel55[koszyk.lubel55$Rok=="2015",]
+vec.koszyk.lubel55.15<-c(koszyk.lubel55.15$Wartosc)
+vec.koszyk.lubel55.15<-as.numeric(vec.koszyk.lubel55.15)
+mean.koszyk.lubel55.15<-mean(vec.koszyk.lubel55.15, na.rm=TRUE)
+
+koszyk.lubel55.16<-koszyk.lubel55[koszyk.lubel55$Rok=="2016",]
+vec.koszyk.lubel55.16<-c(koszyk.lubel55.16$Wartosc)
+vec.koszyk.lubel55.16<-as.numeric(vec.koszyk.lubel55.16)
+mean.koszyk.lubel55.16<-mean(vec.koszyk.lubel55.16, na.rm=TRUE)
+
+koszyk.lubel55.17<-koszyk.lubel55[koszyk.lubel55$Rok=="2017",]
+vec.koszyk.lubel55.17<-c(koszyk.lubel55.17$Wartosc)
+vec.koszyk.lubel55.17<-as.numeric(vec.koszyk.lubel55.17)
+mean.koszyk.lubel55.17<-mean(vec.koszyk.lubel55.17, na.rm=TRUE)
+
+koszyk.lubel55.18<-koszyk.lubel55[koszyk.lubel55$Rok=="2018",]
+vec.koszyk.lubel55.18<-c(koszyk.lubel55.18$Wartosc)
+vec.koszyk.lubel55.18<-as.numeric(vec.koszyk.lubel55.18)
+mean.koszyk.lubel55.18<-mean(vec.koszyk.lubel55.18, na.rm=TRUE)
+
+koszyk.lubel55.19<-koszyk.lubel55[koszyk.lubel55$Rok=="2019",]
+vec.koszyk.lubel55.19<-c(koszyk.lubel55.19$Wartosc)
+vec.koszyk.lubel55.19<-as.numeric(vec.koszyk.lubel55.19)
+mean.koszyk.lubel55.19<-mean(vec.koszyk.lubel55.19, na.rm=TRUE)
+
+srednia.koszyk.lubel55<-c(mean.koszyk.lubel55.06,mean.koszyk.lubel55.07,mean.koszyk.lubel55.08,mean.koszyk.lubel55.09,
+                          mean.koszyk.lubel55.10,mean.koszyk.lubel55.11,mean.koszyk.lubel55.12,mean.koszyk.lubel55.13,
+                          mean.koszyk.lubel55.14,mean.koszyk.lubel55.15,mean.koszyk.lubel55.16,mean.koszyk.lubel55.17,
+                          mean.koszyk.lubel55.18,mean.koszyk.lubel55.19)
+
+lata<-c(2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019)
+png(file = "koszyk.warminsko.mazurskie.jpg")
+plot(srednia.koszyk.lubel55,type = "o", col = "red", xlab='', ylab = "",ylim=c(10,25),
+     main = "Średnia cena za zakupy w Warmińsko-Mazurskim",xaxt = 'n')
+lablist<-as.vector(c(2006:2019))
+axis(1, at=seq(1, 14, by=1), labels = FALSE)
+text(seq(1, 14, by=1), par("usr")[3] - 0.2, labels = lablist, srt = 45, pos = 1, xpd = TRUE)
+dev.off()
+
+########################################################################################################
+koszyk.lubel6.06<-koszyk.lubel6[koszyk.lubel6$Rok=="2006",]
+vec.koszyk.lubel6.06<-c(koszyk.lubel6.06$Wartosc)
+vec.koszyk.lubel6.06<-as.numeric(vec.koszyk.lubel6.06)
+mean.koszyk.lubel6.06<-mean(vec.koszyk.lubel6.06, na.rm=TRUE)
+
+koszyk.lubel6.07<-koszyk.lubel6[koszyk.lubel6$Rok=="2007",]
+vec.koszyk.lubel6.07<-c(koszyk.lubel6.07$Wartosc)
+vec.koszyk.lubel6.07<-as.numeric(vec.koszyk.lubel6.07)
+mean.koszyk.lubel6.07<-mean(vec.koszyk.lubel6.07, na.rm=TRUE)
+
+koszyk.lubel6.08<-koszyk.lubel6[koszyk.lubel6$Rok=="2008",]
+vec.koszyk.lubel6.08<-c(koszyk.lubel6.08$Wartosc)
+vec.koszyk.lubel6.08<-as.numeric(vec.koszyk.lubel6.08)
+mean.koszyk.lubel6.08<-mean(vec.koszyk.lubel6.08, na.rm=TRUE)
+
+koszyk.lubel6.09<-koszyk.lubel6[koszyk.lubel6$Rok=="2009",]
+vec.koszyk.lubel6.09<-c(koszyk.lubel6.09$Wartosc)
+vec.koszyk.lubel6.09<-as.numeric(vec.koszyk.lubel6.09)
+mean.koszyk.lubel6.09<-mean(vec.koszyk.lubel6.09, na.rm=TRUE)
+
+koszyk.lubel6.10<-koszyk.lubel6[koszyk.lubel6$Rok=="2010",]
+vec.koszyk.lubel6.10<-c(koszyk.lubel6.10$Wartosc)
+vec.koszyk.lubel6.10<-as.numeric(vec.koszyk.lubel6.10)
+mean.koszyk.lubel6.10<-mean(vec.koszyk.lubel6.10, na.rm=TRUE)
+
+koszyk.lubel6.11<-koszyk.lubel6[koszyk.lubel6$Rok=="2011",]
+vec.koszyk.lubel6.11<-c(koszyk.lubel6.11$Wartosc)
+vec.koszyk.lubel6.11<-as.numeric(vec.koszyk.lubel6.11)
+mean.koszyk.lubel6.11<-mean(vec.koszyk.lubel6.11, na.rm=TRUE)
+
+koszyk.lubel6.12<-koszyk.lubel6[koszyk.lubel6$Rok=="2012",]
+vec.koszyk.lubel6.12<-c(koszyk.lubel6.12$Wartosc)
+vec.koszyk.lubel6.12<-as.numeric(vec.koszyk.lubel6.12)
+mean.koszyk.lubel6.12<-mean(vec.koszyk.lubel6.12, na.rm=TRUE)
+
+koszyk.lubel6.13<-koszyk.lubel6[koszyk.lubel6$Rok=="2013",]
+vec.koszyk.lubel6.13<-c(koszyk.lubel6.13$Wartosc)
+vec.koszyk.lubel6.13<-as.numeric(vec.koszyk.lubel6.13)
+mean.koszyk.lubel6.13<-mean(vec.koszyk.lubel6.13, na.rm=TRUE)
+
+koszyk.lubel6.14<-koszyk.lubel6[koszyk.lubel6$Rok=="2014",]
+vec.koszyk.lubel6.14<-c(koszyk.lubel6.14$Wartosc)
+vec.koszyk.lubel6.14<-as.numeric(vec.koszyk.lubel6.14)
+mean.koszyk.lubel6.14<-mean(vec.koszyk.lubel6.14, na.rm=TRUE)
+
+koszyk.lubel6.15<-koszyk.lubel6[koszyk.lubel6$Rok=="2015",]
+vec.koszyk.lubel6.15<-c(koszyk.lubel6.15$Wartosc)
+vec.koszyk.lubel6.15<-as.numeric(vec.koszyk.lubel6.15)
+mean.koszyk.lubel6.15<-mean(vec.koszyk.lubel6.15, na.rm=TRUE)
+
+koszyk.lubel6.16<-koszyk.lubel6[koszyk.lubel6$Rok=="2016",]
+vec.koszyk.lubel6.16<-c(koszyk.lubel6.16$Wartosc)
+vec.koszyk.lubel6.16<-as.numeric(vec.koszyk.lubel6.16)
+mean.koszyk.lubel6.16<-mean(vec.koszyk.lubel6.16, na.rm=TRUE)
+
+koszyk.lubel6.17<-koszyk.lubel6[koszyk.lubel6$Rok=="2017",]
+vec.koszyk.lubel6.17<-c(koszyk.lubel6.17$Wartosc)
+vec.koszyk.lubel6.17<-as.numeric(vec.koszyk.lubel6.17)
+mean.koszyk.lubel6.17<-mean(vec.koszyk.lubel6.17, na.rm=TRUE)
+
+koszyk.lubel6.18<-koszyk.lubel6[koszyk.lubel6$Rok=="2018",]
+vec.koszyk.lubel6.18<-c(koszyk.lubel6.18$Wartosc)
+vec.koszyk.lubel6.18<-as.numeric(vec.koszyk.lubel6.18)
+mean.koszyk.lubel6.18<-mean(vec.koszyk.lubel6.18, na.rm=TRUE)
+
+koszyk.lubel6.19<-koszyk.lubel6[koszyk.lubel6$Rok=="2019",]
+vec.koszyk.lubel6.19<-c(koszyk.lubel6.19$Wartosc)
+vec.koszyk.lubel6.19<-as.numeric(vec.koszyk.lubel6.19)
+mean.koszyk.lubel6.19<-mean(vec.koszyk.lubel6.19, na.rm=TRUE)
+
+srednia.koszyk.lubel6<-c(mean.koszyk.lubel6.06,mean.koszyk.lubel6.07,mean.koszyk.lubel6.08,mean.koszyk.lubel6.09,
+                         mean.koszyk.lubel6.10,mean.koszyk.lubel6.11,mean.koszyk.lubel6.12,mean.koszyk.lubel6.13,
+                         mean.koszyk.lubel6.14,mean.koszyk.lubel6.15,mean.koszyk.lubel6.16,mean.koszyk.lubel6.17,
+                         mean.koszyk.lubel6.18,mean.koszyk.lubel6.19)
+
+lata<-c(2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019)
+png(file = "koszyk.wielkopolskie.jpg")
+plot(srednia.koszyk.lubel6,type = "o", col = "red", xlab='', ylab = "",ylim=c(10,25),
+     main = "Średnia cena za zakupy w Wielkopolskim",xaxt = 'n')
+lablist<-as.vector(c(2006:2019))
+axis(1, at=seq(1, 14, by=1), labels = FALSE)
+text(seq(1, 14, by=1), par("usr")[3] - 0.2, labels = lablist, srt = 45, pos = 1, xpd = TRUE)
+dev.off()
+
+########################################################################################################
+koszyk.lubel66.06<-koszyk.lubel66[koszyk.lubel66$Rok=="2006",]
+vec.koszyk.lubel66.06<-c(koszyk.lubel66.06$Wartosc)
+vec.koszyk.lubel66.06<-as.numeric(vec.koszyk.lubel66.06)
+mean.koszyk.lubel66.06<-mean(vec.koszyk.lubel66.06, na.rm=TRUE)
+
+koszyk.lubel66.07<-koszyk.lubel66[koszyk.lubel66$Rok=="2007",]
+vec.koszyk.lubel66.07<-c(koszyk.lubel66.07$Wartosc)
+vec.koszyk.lubel66.07<-as.numeric(vec.koszyk.lubel66.07)
+mean.koszyk.lubel66.07<-mean(vec.koszyk.lubel66.07, na.rm=TRUE)
+
+koszyk.lubel66.08<-koszyk.lubel66[koszyk.lubel66$Rok=="2008",]
+vec.koszyk.lubel66.08<-c(koszyk.lubel66.08$Wartosc)
+vec.koszyk.lubel66.08<-as.numeric(vec.koszyk.lubel66.08)
+mean.koszyk.lubel66.08<-mean(vec.koszyk.lubel66.08, na.rm=TRUE)
+
+koszyk.lubel66.09<-koszyk.lubel66[koszyk.lubel66$Rok=="2009",]
+vec.koszyk.lubel66.09<-c(koszyk.lubel66.09$Wartosc)
+vec.koszyk.lubel66.09<-as.numeric(vec.koszyk.lubel66.09)
+mean.koszyk.lubel66.09<-mean(vec.koszyk.lubel66.09, na.rm=TRUE)
+
+koszyk.lubel66.10<-koszyk.lubel66[koszyk.lubel66$Rok=="2010",]
+vec.koszyk.lubel66.10<-c(koszyk.lubel66.10$Wartosc)
+vec.koszyk.lubel66.10<-as.numeric(vec.koszyk.lubel66.10)
+mean.koszyk.lubel66.10<-mean(vec.koszyk.lubel66.10, na.rm=TRUE)
+
+koszyk.lubel66.11<-koszyk.lubel66[koszyk.lubel66$Rok=="2011",]
+vec.koszyk.lubel66.11<-c(koszyk.lubel66.11$Wartosc)
+vec.koszyk.lubel66.11<-as.numeric(vec.koszyk.lubel66.11)
+mean.koszyk.lubel66.11<-mean(vec.koszyk.lubel66.11, na.rm=TRUE)
+
+koszyk.lubel66.12<-koszyk.lubel66[koszyk.lubel66$Rok=="2012",]
+vec.koszyk.lubel66.12<-c(koszyk.lubel66.12$Wartosc)
+vec.koszyk.lubel66.12<-as.numeric(vec.koszyk.lubel66.12)
+mean.koszyk.lubel66.12<-mean(vec.koszyk.lubel66.12, na.rm=TRUE)
+
+koszyk.lubel66.13<-koszyk.lubel66[koszyk.lubel66$Rok=="2013",]
+vec.koszyk.lubel66.13<-c(koszyk.lubel66.13$Wartosc)
+vec.koszyk.lubel66.13<-as.numeric(vec.koszyk.lubel66.13)
+mean.koszyk.lubel66.13<-mean(vec.koszyk.lubel66.13, na.rm=TRUE)
+
+koszyk.lubel66.14<-koszyk.lubel66[koszyk.lubel66$Rok=="2014",]
+vec.koszyk.lubel66.14<-c(koszyk.lubel66.14$Wartosc)
+vec.koszyk.lubel66.14<-as.numeric(vec.koszyk.lubel66.14)
+mean.koszyk.lubel66.14<-mean(vec.koszyk.lubel66.14, na.rm=TRUE)
+
+koszyk.lubel66.15<-koszyk.lubel66[koszyk.lubel66$Rok=="2015",]
+vec.koszyk.lubel66.15<-c(koszyk.lubel66.15$Wartosc)
+vec.koszyk.lubel66.15<-as.numeric(vec.koszyk.lubel66.15)
+mean.koszyk.lubel66.15<-mean(vec.koszyk.lubel66.15, na.rm=TRUE)
+
+koszyk.lubel66.16<-koszyk.lubel66[koszyk.lubel66$Rok=="2016",]
+vec.koszyk.lubel66.16<-c(koszyk.lubel66.16$Wartosc)
+vec.koszyk.lubel66.16<-as.numeric(vec.koszyk.lubel66.16)
+mean.koszyk.lubel66.16<-mean(vec.koszyk.lubel66.16, na.rm=TRUE)
+
+koszyk.lubel66.17<-koszyk.lubel66[koszyk.lubel66$Rok=="2017",]
+vec.koszyk.lubel66.17<-c(koszyk.lubel66.17$Wartosc)
+vec.koszyk.lubel66.17<-as.numeric(vec.koszyk.lubel66.17)
+mean.koszyk.lubel66.17<-mean(vec.koszyk.lubel66.17, na.rm=TRUE)
+
+koszyk.lubel66.18<-koszyk.lubel66[koszyk.lubel66$Rok=="2018",]
+vec.koszyk.lubel66.18<-c(koszyk.lubel66.18$Wartosc)
+vec.koszyk.lubel66.18<-as.numeric(vec.koszyk.lubel66.18)
+mean.koszyk.lubel66.18<-mean(vec.koszyk.lubel66.18, na.rm=TRUE)
+
+koszyk.lubel66.19<-koszyk.lubel66[koszyk.lubel66$Rok=="2019",]
+vec.koszyk.lubel66.19<-c(koszyk.lubel66.19$Wartosc)
+vec.koszyk.lubel66.19<-as.numeric(vec.koszyk.lubel66.19)
+mean.koszyk.lubel66.19<-mean(vec.koszyk.lubel66.19, na.rm=TRUE)
+
+srednia.koszyk.lubel66<-c(mean.koszyk.lubel66.06,mean.koszyk.lubel66.07,mean.koszyk.lubel66.08,mean.koszyk.lubel66.09,
+                          mean.koszyk.lubel66.10,mean.koszyk.lubel66.11,mean.koszyk.lubel66.12,mean.koszyk.lubel66.13,
+                          mean.koszyk.lubel66.14,mean.koszyk.lubel66.15,mean.koszyk.lubel66.16,mean.koszyk.lubel66.17,
+                          mean.koszyk.lubel66.18,mean.koszyk.lubel66.19)
+
+lata<-c(2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019)
+png(file = "koszyk.zachodniopomorskim.jpg")
+plot(srednia.koszyk.lubel66,type = "o", col = "red", xlab='', ylab = "",ylim=c(10,25),
+     main = "Średnia cena za zakupy w Zachodniopomorskim",xaxt = 'n')
+lablist<-as.vector(c(2006:2019))
+axis(1, at=seq(1, 14, by=1), labels = FALSE)
+text(seq(1, 14, by=1), par("usr")[3] - 0.2, labels = lablist, srt = 45, pos = 1, xpd = TRUE)
+dev.off()
+
+########################################################################################################
+koszyk.lubel7.06<-koszyk.lubel7[koszyk.lubel7$Rok=="2006",]
+vec.koszyk.lubel7.06<-c(koszyk.lubel7.06$Wartosc)
+vec.koszyk.lubel7.06<-as.numeric(vec.koszyk.lubel7.06)
+mean.koszyk.lubel7.06<-mean(vec.koszyk.lubel7.06, na.rm=TRUE)
+
+koszyk.lubel7.07<-koszyk.lubel7[koszyk.lubel7$Rok=="2007",]
+vec.koszyk.lubel7.07<-c(koszyk.lubel7.07$Wartosc)
+vec.koszyk.lubel7.07<-as.numeric(vec.koszyk.lubel7.07)
+mean.koszyk.lubel7.07<-mean(vec.koszyk.lubel7.07, na.rm=TRUE)
+
+koszyk.lubel7.08<-koszyk.lubel7[koszyk.lubel7$Rok=="2008",]
+vec.koszyk.lubel7.08<-c(koszyk.lubel7.08$Wartosc)
+vec.koszyk.lubel7.08<-as.numeric(vec.koszyk.lubel7.08)
+mean.koszyk.lubel7.08<-mean(vec.koszyk.lubel7.08, na.rm=TRUE)
+
+koszyk.lubel7.09<-koszyk.lubel7[koszyk.lubel7$Rok=="2009",]
+vec.koszyk.lubel7.09<-c(koszyk.lubel7.09$Wartosc)
+vec.koszyk.lubel7.09<-as.numeric(vec.koszyk.lubel7.09)
+mean.koszyk.lubel7.09<-mean(vec.koszyk.lubel7.09, na.rm=TRUE)
+
+koszyk.lubel7.10<-koszyk.lubel7[koszyk.lubel7$Rok=="2010",]
+vec.koszyk.lubel7.10<-c(koszyk.lubel7.10$Wartosc)
+vec.koszyk.lubel7.10<-as.numeric(vec.koszyk.lubel7.10)
+mean.koszyk.lubel7.10<-mean(vec.koszyk.lubel7.10, na.rm=TRUE)
+
+koszyk.lubel7.11<-koszyk.lubel7[koszyk.lubel7$Rok=="2011",]
+vec.koszyk.lubel7.11<-c(koszyk.lubel7.11$Wartosc)
+vec.koszyk.lubel7.11<-as.numeric(vec.koszyk.lubel7.11)
+mean.koszyk.lubel7.11<-mean(vec.koszyk.lubel7.11, na.rm=TRUE)
+
+koszyk.lubel7.12<-koszyk.lubel7[koszyk.lubel7$Rok=="2012",]
+vec.koszyk.lubel7.12<-c(koszyk.lubel7.12$Wartosc)
+vec.koszyk.lubel7.12<-as.numeric(vec.koszyk.lubel7.12)
+mean.koszyk.lubel7.12<-mean(vec.koszyk.lubel7.12, na.rm=TRUE)
+
+koszyk.lubel7.13<-koszyk.lubel7[koszyk.lubel7$Rok=="2013",]
+vec.koszyk.lubel7.13<-c(koszyk.lubel7.13$Wartosc)
+vec.koszyk.lubel7.13<-as.numeric(vec.koszyk.lubel7.13)
+mean.koszyk.lubel7.13<-mean(vec.koszyk.lubel7.13, na.rm=TRUE)
+
+koszyk.lubel7.14<-koszyk.lubel7[koszyk.lubel7$Rok=="2014",]
+vec.koszyk.lubel7.14<-c(koszyk.lubel7.14$Wartosc)
+vec.koszyk.lubel7.14<-as.numeric(vec.koszyk.lubel7.14)
+mean.koszyk.lubel7.14<-mean(vec.koszyk.lubel7.14, na.rm=TRUE)
+
+koszyk.lubel7.15<-koszyk.lubel7[koszyk.lubel7$Rok=="2015",]
+vec.koszyk.lubel7.15<-c(koszyk.lubel7.15$Wartosc)
+vec.koszyk.lubel7.15<-as.numeric(vec.koszyk.lubel7.15)
+mean.koszyk.lubel7.15<-mean(vec.koszyk.lubel7.15, na.rm=TRUE)
+
+koszyk.lubel7.16<-koszyk.lubel7[koszyk.lubel7$Rok=="2016",]
+vec.koszyk.lubel7.16<-c(koszyk.lubel7.16$Wartosc)
+vec.koszyk.lubel7.16<-as.numeric(vec.koszyk.lubel7.16)
+mean.koszyk.lubel7.16<-mean(vec.koszyk.lubel7.16, na.rm=TRUE)
+
+koszyk.lubel7.17<-koszyk.lubel7[koszyk.lubel7$Rok=="2017",]
+vec.koszyk.lubel7.17<-c(koszyk.lubel7.17$Wartosc)
+vec.koszyk.lubel7.17<-as.numeric(vec.koszyk.lubel7.17)
+mean.koszyk.lubel7.17<-mean(vec.koszyk.lubel7.17, na.rm=TRUE)
+
+koszyk.lubel7.18<-koszyk.lubel7[koszyk.lubel7$Rok=="2018",]
+vec.koszyk.lubel7.18<-c(koszyk.lubel7.18$Wartosc)
+vec.koszyk.lubel7.18<-as.numeric(vec.koszyk.lubel7.18)
+mean.koszyk.lubel7.18<-mean(vec.koszyk.lubel7.18, na.rm=TRUE)
+
+koszyk.lubel7.19<-koszyk.lubel7[koszyk.lubel7$Rok=="2019",]
+vec.koszyk.lubel7.19<-c(koszyk.lubel7.19$Wartosc)
+vec.koszyk.lubel7.19<-as.numeric(vec.koszyk.lubel7.19)
+mean.koszyk.lubel7.19<-mean(vec.koszyk.lubel7.19, na.rm=TRUE)
+
+srednia.koszyk.lubel7<-c(mean.koszyk.lubel7.06,mean.koszyk.lubel7.07,mean.koszyk.lubel7.08,mean.koszyk.lubel7.09,
+                         mean.koszyk.lubel7.10,mean.koszyk.lubel7.11,mean.koszyk.lubel7.12,mean.koszyk.lubel7.13,
+                         mean.koszyk.lubel7.14,mean.koszyk.lubel7.15,mean.koszyk.lubel7.16,mean.koszyk.lubel7.17,
+                         mean.koszyk.lubel7.18,mean.koszyk.lubel7.19)
+
+lata<-c(2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019)
+png(file = "koszyk.podkarpackie.jpg")
+plot(srednia.koszyk.lubel,type = "o", col = "red", xlab='', ylab = "",ylim=c(10,25),
+     main = "Średnia cena za zakupy w Podkarpackim",xaxt = 'n')
+lablist<-as.vector(c(2006:2019))
+axis(1, at=seq(1, 14, by=1), labels = FALSE)
+text(seq(1, 14, by=1), par("usr")[3] - 0.2, labels = lablist, srt = 45, pos = 1, xpd = TRUE)
+dev.off()
+
+
+plot_ly(x=x)%>% 
+        
+        add_lines(y=srednia.koszyk.dolno, color=I("red"),name="DOLNOŚLĄSKIE")%>% 
+        
+        add_lines(y=srednia.koszyk.kujawsko, color=I("green"),name="KUJAWSKO-POMORSKIE")%>% 
+        
+        add_lines(y=srednia.koszyk.lubel, color=I("blue"),name="LUBELSKIE")%>% 
+        
+        add_lines(y=srednia.koszyk.lubel1, color=I("yellow"),name="LUBUSKIE")%>%
+        
+        add_lines(y=srednia.koszyk.lubel11, color=I("orange"),name="ŁÓDZKIE")%>% 
+        
+        add_lines(y=srednia.koszyk.lubel2, color=I("black"),name="MAŁOPOLSKIE")%>% 
+        
+        add_lines(y=srednia.koszyk.lubel22, color=I("darkorchid"),name="MAZOWIECKIE")%>% 
+        
+        add_lines(y=srednia.koszyk.lubel3, color=I("deeppink"),name="OPOLSKIE")%>% 
+        
+        add_lines(y=srednia.koszyk.lubel33, color=I("chartreuse"),name="PODLASKIE")%>% 
+        
+        add_lines(y=srednia.koszyk.lubel4, color=I("skyblue"),name="POMORSKIE")%>%
+        
+        add_lines(y=srednia.koszyk.lubel44, color=I("moccasin"),name="ŚLĄSKIM")%>% 
+        
+        add_lines(y=srednia.koszyk.lubel5, color=I("turquoise1"),name="ŚWIĘTOKRZYSKIE")%>%
+        
+        add_lines(y=srednia.koszyk.lubel55, color=I("palevioletred"),name="WARMIŃSKO-MAZURSKIE")%>%  
+        
+        add_lines(y=srednia.koszyk.lubel6, color=I("navy"),name="WIELKOPOLSKIE")%>% 
+        
+        add_lines(y=srednia.koszyk.lubel66, color=I("antiquewhite3"),name="ZACHODNIOPOMORSKIE")%>% 
+        
+        add_lines(y=srednia.koszyk.lubel7, color=I("coral"),name="PODKARPACKIE")
